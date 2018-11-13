@@ -16,15 +16,13 @@ private:
     int solution;
     int p1Guess;
     int p2Guess;
-    Player* player1;
-    Player* player2;
 
 public:
-    Game(Player& player1, Player& player2); // assumes player1 is human vs player2 is AI
+    Game(); // assumes player1 is human vs player2 is AI
     void collectGuess(int guessIn);
     void calcGuess();
     void generateSolution();
-    void play();
+    void play(Player& player1, Player& player2);
 };
 
 #endif //TERM_PROJECT_220_GAME_H

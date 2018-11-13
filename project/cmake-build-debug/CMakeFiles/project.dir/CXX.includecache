@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/Game.h
+Player.h
+/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/Player.h
+string
+/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/string
+iostream
+/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/iostream
+stdlib.h
+/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/stdlib.h
+time.h
+/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/time.h
+
+/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/Player.h
+string
+/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/string
+iostream
+/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/iostream
+
+/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/main.cpp
+iostream
+-
+Player.h
+/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/Player.h
+Game.h
+/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/Game.h
+

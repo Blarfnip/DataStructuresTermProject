@@ -5,9 +5,7 @@
 #include "Game.h"
 #include "ArrayLib.h"
 
-Game::Game(Player& player1, Player& player2) {
-    this->player1 = &player1;
-    this->player2 = &player2;
+Game::Game() {
 }
 
 void Game::collectGuess(int guessIn) {
@@ -22,7 +20,7 @@ void Game::calcGuess() {
     p2Guess=genRandInt(1,100);
 }
 
-void Game::play() {
+void Game::play(Player& player1, Player& player2) {
     int difference1;
     int difference2;
     if (p1Guess > solution) {
@@ -37,17 +35,17 @@ void Game::play() {
     if(p2Guess < solution) {
         difference2=p2Guess-solution;
     }
-    else if(p1Guess==solution){
-        player1->won();
-        player2->lost();
+    if(p1Guess==solution){
+        player1.won();
+        player2.lost();
     }
-    else if(difference1<difference2){
-        player1->won();
-        player2->lost();
+    if(difference1<difference2){
+        player1.won();
+        player2.lost();
     }
-    else if(difference2<difference1){
-        player2->won();
-        player1->lost();
+    if(difference2<difference1){
+        player2.won();
+        player1.lost();
     }
 
 }
