@@ -16,8 +16,8 @@ private:
     int solution;
     int p1Guess;
     int p2Guess;
-    Player* player1= new Player("test1");
-    Player* player2= new Player("test2");
+    Player* player1;
+    Player* player2;
 
 public:
     Game(Player& player1, Player& player2); // assumes player1 is human vs player2 is AI
