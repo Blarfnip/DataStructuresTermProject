@@ -52,8 +52,8 @@ void Game::play() {
 
     }
     else if(difference1==difference2){
-        player1.won();
-        player2.lost();
+        player1->won();
+        player2->lost();
     }
 
 }
