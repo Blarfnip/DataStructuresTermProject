@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="project">
-				<Option output="/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/cmake-build-debug/project.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/cmake-build-debug"/>
+				<Option output="/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/cmake-build-debug/project.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -42,15 +42,15 @@
 					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 project"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 project"/>
+					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="project/fast">
-				<Option output="/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/cmake-build-debug/project.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/cmake-build-debug"/>
+				<Option output="/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/cmake-build-debug/project.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -63,48 +63,48 @@
 					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 project/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 project/fast"/>
+					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/TermProject/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j12 -f &quot;/cygdrive/c/Users/Milo\ Rue/Desktop/Term\ Project/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/ArrayLib.cpp">
+		<Unit filename="/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/ArrayLib.cpp">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/ArrayLib.h">
+		<Unit filename="/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/ArrayLib.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/ArrayList.h">
+		<Unit filename="/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/ArrayList.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/Game.cpp">
+		<Unit filename="/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/Game.cpp">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/Game.h">
+		<Unit filename="/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/Game.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/Player.cpp">
+		<Unit filename="/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/Player.cpp">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/Player.h">
+		<Unit filename="/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/Player.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/main.cpp">
+		<Unit filename="/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/main.cpp">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/CMakeLists.txt">
+		<Unit filename="/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

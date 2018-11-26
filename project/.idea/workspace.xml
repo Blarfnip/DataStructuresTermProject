@@ -12,6 +12,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a7a8dde-8acc-4908-8833-8ce04112b2b1" name="Default Changelist" comment="initial commit">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/PlayerQueue.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Game.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/Game.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/Game.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/project.dir/main.cpp.o" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/ArrayList.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArrayList.inl" afterDir="false" />
+>>>>>>> 16896d28cfd2d8abb9a70c27e0704bd8cfbde791
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
@@ -26,6 +39,11 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/project.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/project.cbp" afterDir="false" />
+<<<<<<< HEAD
+=======
+>>>>>>> c6f091f035dc4647204bceba803f585f2ba6d159
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+>>>>>>> 16896d28cfd2d8abb9a70c27e0704bd8cfbde791
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -76,30 +94,33 @@
     <session id="-595514412">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cpp" value="1" />
-          <entry key="h" value="1" />
+          <entry key="cpp" value="2" />
+          <entry key="h" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ObjectiveC" value="2" />
+          <entry key="ObjectiveC" value="3" />
+          <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="102" />
-          <entry key="h" value="35" />
+          <entry key="cpp" value="240" />
+          <entry key="h" value="125" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="137" />
+          <entry key="ObjectiveC" value="365" />
         </counts>
       </usages-collector>
     </session>
@@ -110,7 +131,11 @@
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
+<<<<<<< HEAD
+              <caret line="5" column="65" lean-forward="true" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
+=======
               <caret line="5" column="76" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="76" />
+>>>>>>> c6f091f035dc4647204bceba803f585f2ba6d159
             </state>
           </provider>
         </entry>
@@ -118,8 +143,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="408">
               <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="408">
+              <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+=======
+            <state relative-caret-position="266">
+              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+>>>>>>> 16896d28cfd2d8abb9a70c27e0704bd8cfbde791
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -135,6 +169,7 @@
               <folding>
                 <element signature="e#113#130#0" expanded="true" />
               </folding>
+>>>>>>> c6f091f035dc4647204bceba803f585f2ba6d159
             </state>
           </provider>
         </entry>
@@ -142,23 +177,57 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Player.cpp">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="136">
               <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="-459" />
+=======
+            <state relative-caret-position="-1088">
+              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+>>>>>>> 16896d28cfd2d8abb9a70c27e0704bd8cfbde791
             </state>
+>>>>>>> c6f091f035dc4647204bceba803f585f2ba6d159
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ArrayLib.cpp">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/Player.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="2" selection-start-column="2" selection-end-column="2" />
+            </state>
+          </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Game.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-34">
+              <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+            </state>
+=======
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ArrayList.inl">
+<<<<<<< HEAD
           <provider selected="true" editor-type-id="text-editor" />
+=======
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-119" />
+>>>>>>> c6f091f035dc4647204bceba803f585f2ba6d159
+          </provider>
+>>>>>>> 16896d28cfd2d8abb9a70c27e0704bd8cfbde791
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/PlayerQueue.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+=======
         <entry file="file://$PROJECT_DIR$/ArrayList.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
@@ -166,6 +235,7 @@
               <folding>
                 <element signature="e#151#160#0" expanded="true" />
               </folding>
+>>>>>>> c6f091f035dc4647204bceba803f585f2ba6d159
             </state>
           </provider>
         </entry>
@@ -173,7 +243,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game.h">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="374">
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="408">
+              <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+=======
+            <state relative-caret-position="238">
+>>>>>>> 16896d28cfd2d8abb9a70c27e0704bd8cfbde791
               <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
             </state>
           </provider>
@@ -182,8 +260,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Game.cpp">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="714">
               <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+=======
+            <state relative-caret-position="187">
+              <caret line="45" column="32" lean-forward="true" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+>>>>>>> c6f091f035dc4647204bceba803f585f2ba6d159
+>>>>>>> 16896d28cfd2d8abb9a70c27e0704bd8cfbde791
             </state>
           </provider>
         </entry>
@@ -202,6 +286,10 @@
         <option value="$PROJECT_DIR$/Player.h" />
         <option value="$PROJECT_DIR$/Game.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/PlayerQueue.h" />
+=======
+>>>>>>> c6f091f035dc4647204bceba803f585f2ba6d159
         <option value="$PROJECT_DIR$/Game.cpp" />
       </list>
     </option>
@@ -239,6 +327,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ObjectiveC" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -248,6 +337,7 @@
       <recent name="C:\Users\Saul\Documents\Data Structures Projects\TermProject\project" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Milo Rue\Desktop\Term Project\project" />
       <recent name="C:\Users\Saul\Documents\Data Structures Projects\TermProject\project" />
     </key>
   </component>
@@ -290,36 +380,74 @@
       <option name="presentableId" value="Default" />
       <updated>1542119411927</updated>
       <workItem from="1542119413214" duration="630000" />
+<<<<<<< HEAD
+      <workItem from="1542122665539" duration="1527000" />
+      <workItem from="1542232471516" duration="600000" />
+      <workItem from="1543245158339" duration="1507000" />
+=======
       <workItem from="1542122665539" duration="610000" />
       <workItem from="1542125162578" duration="635000" />
       <workItem from="1542208065915" duration="606000" />
       <workItem from="1543244567413" duration="1906000" />
+<<<<<<< HEAD
       <workItem from="1543247483559" duration="39000" />
+=======
+>>>>>>> c6f091f035dc4647204bceba803f585f2ba6d159
+>>>>>>> 16896d28cfd2d8abb9a70c27e0704bd8cfbde791
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="4426000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="4264000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+=======
+    <option name="totallyTimeSpent" value="4387000" />
+>>>>>>> c6f091f035dc4647204bceba803f585f2ba6d159
+>>>>>>> 16896d28cfd2d8abb9a70c27e0704bd8cfbde791
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21208054" />
+=======
+<<<<<<< HEAD
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2585288" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20939597" />
+>>>>>>> c6f091f035dc4647204bceba803f585f2ba6d159
+>>>>>>> 16896d28cfd2d8abb9a70c27e0704bd8cfbde791
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.329718" />
+=======
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32907802" />
+>>>>>>> c6f091f035dc4647204bceba803f585f2ba6d159
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.329718" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32907802" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.3286334" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="CMake" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.329718" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -337,6 +465,25 @@
     <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/Game.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArrayLib.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="65" lean-forward="true" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
+=======
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -379,6 +526,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ArrayList.h">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="289">
           <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
           <folding>
@@ -391,13 +539,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+=======
+        <state relative-caret-position="-1088">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+>>>>>>> c6f091f035dc4647204bceba803f585f2ba6d159
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Player.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Player.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="408">
+          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PlayerQueue.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+=======
+        <state relative-caret-position="266">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+>>>>>>> c6f091f035dc4647204bceba803f585f2ba6d159
+>>>>>>> 16896d28cfd2d8abb9a70c27e0704bd8cfbde791
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Game.cpp">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="714">
           <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="-34">
+          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+=======
+        <state relative-caret-position="187">
+          <caret line="45" column="32" lean-forward="true" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+>>>>>>> c6f091f035dc4647204bceba803f585f2ba6d159
+>>>>>>> 16896d28cfd2d8abb9a70c27e0704bd8cfbde791
         </state>
       </provider>
     </entry>
