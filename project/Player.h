@@ -6,9 +6,11 @@
 #define TERM_PROJECT_220_PLAYER_H
 #include "string"
 #include "iostream"
+#include "ArrayLib.h"
 
 class Player{
 private:
+    bool isPlayer = false;
     int rank=0;
     int wins=0;
     int winstreak=0;
@@ -27,6 +29,7 @@ public:
     int getRank();
     int getWins();
     int getGames();
+    int generateGuess();
     void changeID(std::string newID, std::string userPassIn);
     void setPass(std::string userPassIn);
     std::string checkTier();

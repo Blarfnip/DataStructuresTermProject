@@ -83,3 +83,9 @@ std::string Player::checkTier() {
     }
 }
 
+int Player::generateGuess() {
+    if(!isPlayer) {
+        return genRandInt(1,100);
+    }
+}
+
