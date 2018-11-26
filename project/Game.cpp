@@ -21,8 +21,8 @@ void Game::calcGuess() {
 }
 
 void Game::play(Player& player1, Player& player2) {
-    int difference1;
-    int difference2;
+    int difference1=0;
+    int difference2=0;
     if (p1Guess > solution) {
         difference1=p1Guess-solution;
     }
@@ -43,9 +43,13 @@ void Game::play(Player& player1, Player& player2) {
         player1.won();
         player2.lost();
     }
-    if(difference2<difference1){
+    else if(difference2<difference1){
         player2.won();
         player1.lost();
+    }
+    else if(difference1==difference2){
+        player1.won();
+        player2.lost();
     }
 
 }

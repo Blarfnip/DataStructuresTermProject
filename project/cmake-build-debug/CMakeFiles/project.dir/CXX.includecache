@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/ArrayLib.h
+string
+-
+
+/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/Game.cpp
+Game.h
+/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/Game.h
+ArrayLib.h
+/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/ArrayLib.h
+
 /cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/Game.h
 Player.h
 /cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/Player.h
@@ -23,12 +33,4 @@ string
 /cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/string
 iostream
 /cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/iostream
-
-/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/main.cpp
-iostream
--
-Player.h
-/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/Player.h
-Game.h
-/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/Game.h
 
