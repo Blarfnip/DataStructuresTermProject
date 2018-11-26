@@ -10,6 +10,16 @@
 string
 -
 
+/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/ArrayLib.cpp
+stdexcept
+-
+cmath
+-
+iostream
+-
+ArrayLib.h
+/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/ArrayLib.h
+
 /cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/ArrayLib.h
 string
 -
@@ -45,6 +55,10 @@ stdlib.h
 /cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/stdlib.h
 time.h
 /cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/time.h
+
+/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/Player.cpp
+Player.h
+/cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/Player.h
 
 /cygdrive/c/Users/Saul/Documents/Data Structures Projects/TermProject/project/Player.h
 string
