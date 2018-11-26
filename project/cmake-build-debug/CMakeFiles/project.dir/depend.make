@@ -9,9 +9,14 @@ CMakeFiles/project.dir/Game.cpp.o: ../Game.cpp
 CMakeFiles/project.dir/Game.cpp.o: ../Game.h
 CMakeFiles/project.dir/Game.cpp.o: ../Player.h
 
+CMakeFiles/project.dir/Player.cpp.o: ../ArrayLib.h
 CMakeFiles/project.dir/Player.cpp.o: ../Player.cpp
 CMakeFiles/project.dir/Player.cpp.o: ../Player.h
 
+CMakeFiles/project.dir/main.cpp.o: /cygdrive/c/Users/Saul/Documents/Data\ Structures\ Projects/220-lab-09/ArrayLib.h
+CMakeFiles/project.dir/main.cpp.o: ../ArrayLib.h
+CMakeFiles/project.dir/main.cpp.o: ../ArrayList.h
+CMakeFiles/project.dir/main.cpp.o: ../ArrayList.inl
 CMakeFiles/project.dir/main.cpp.o: ../Game.h
 CMakeFiles/project.dir/main.cpp.o: ../Player.h
 CMakeFiles/project.dir/main.cpp.o: ../main.cpp
