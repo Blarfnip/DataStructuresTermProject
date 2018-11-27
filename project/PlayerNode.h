@@ -14,12 +14,16 @@
 class PlayerNode{
 private:
     //importFile(filename);
-    Player player;
+    Player* player;
     PlayerNode* next;
+    int forceRating;
 public:
-    PlayerNode(Player player);
+    PlayerNode(Player* player);
     PlayerNode(const PlayerNode& nodeToCopy);
-    int getItem();
+    Player* getPlayer();
+    PlayerNode* getNext();
+    void setPlayer(Player* newPlayer);
+    void setNext(PlayerNode* newNext);
 
 
 
