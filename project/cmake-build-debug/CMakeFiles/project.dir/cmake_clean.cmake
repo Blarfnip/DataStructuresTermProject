@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/project.dir/Game.cpp.o"
   "CMakeFiles/project.dir/Player.cpp.o"
   "CMakeFiles/project.dir/ArrayLib.cpp.o"
+  "CMakeFiles/project.dir/PlayerNode.cpp.o"
   "project.pdb"
   "project.exe"
   "libproject.dll.a"
