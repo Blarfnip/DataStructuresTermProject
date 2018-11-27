@@ -24,6 +24,7 @@ void Game::play() {
     int difference1;
     int difference2;
 
+    //Determines wins based on guesses and solution
     if (p1Guess > solution) {
         difference1=p1Guess-solution;
     }
