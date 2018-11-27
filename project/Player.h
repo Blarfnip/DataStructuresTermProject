@@ -26,6 +26,9 @@ public:
     std::string getID();
     void won();
     void lost();
+    void setIsPlayer(bool val);
+    void setRank(int val);
+    void addToRank(int val);
     int getRank();
     int getWins();
     int getGames();

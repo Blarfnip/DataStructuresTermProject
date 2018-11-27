@@ -9,6 +9,8 @@
 #include "iostream"
 #include "stdlib.h"
 #include "time.h"
+#include "ArrayLib.h"
+
 
 
 class Game{

@@ -83,9 +83,27 @@ std::string Player::checkTier() {
     }
 }
 
+void Player::setIsPlayer(bool val) {
+    isPlayer = val;
+}
+
 int Player::generateGuess() {
     if(!isPlayer) {
         return genRandInt(1,100);
+    } else {
+        std::cout << "Please give me your guess (1-100): ";
+        std::string guess = "0";
+        std::getline(std::cin, guess);// >> guess;
+        std::cout << std::endl;
+        return std::stoi(guess);
     }
+}
+
+
+void Player::setRank(int val) {
+    rank = val;
+}
+void Player::addToRank(int val) {
+    rank += val;
 }
 

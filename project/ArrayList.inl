@@ -3,7 +3,6 @@
 //
 
 #include "ArrayList.h"
-#include "../../220-lab-09/ArrayLib.h"
 
 template <class T>
 void ArrayList<T>::doubleCapacity() {
@@ -77,7 +76,7 @@ T ArrayList<T>::getValueAt(int index) {
 
 template <class T>
 std::string ArrayList<T>::toString() {
-    return ::toString(array, currItemCount);
+    return "Not implemented";//::toString(array, currItemCount);
 }
 
 template <class T>
@@ -94,18 +93,16 @@ template <class T>
 void ArrayList<T>::clearList() {
     currItemCount = 0;
 }
-
-template <class T>
-int ArrayList<T>::find(T itemToFind) {
-    int unusedTimer = 0;
-    return ::find(array, currItemCount, itemToFind, unusedTimer);
-}
-
-template <class T>
-int ArrayList<T>::findLast(T itemToFind) {
-    int unusedTimer = 0;
-    return ::findLast(array, currItemCount, itemToFind, unusedTimer);
-}
+//
+//template <class T>
+//int ArrayList<T>::find(T itemToFind) {
+//    return ::find(array, currItemCount, itemToFind);
+//}
+//
+//template <class T>
+//int ArrayList<T>::findLast(T itemToFind) {
+//    return ::findLast(array, currItemCount, itemToFind);
+//}
 
 template <class T>
 void ArrayList<T>::insertAtFront(T itemToAdd) {
@@ -113,7 +110,7 @@ void ArrayList<T>::insertAtFront(T itemToAdd) {
         doubleCapacity();
     }
     currItemCount++;
-    int nextNum = itemToAdd;
+    T nextNum = itemToAdd;
     for(int i = 0; i < currItemCount; i++) {
         T temp = array[i];
         array[i] = nextNum;

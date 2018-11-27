@@ -2,8 +2,8 @@
 // Created by Milo Rue on 11/12/2018.
 //
 
-#ifndef TERM_PROJECT_220_GAME_H
-#define TERM_PROJECT_220_GAME_H
+#ifndef TERM_PROJECT_220_PLAYERQUEUE_H
+#define TERM_PROJECT_220_PLAYERQUEUE_H
 #include "Player.h"
 #include "string"
 #include "iostream"
@@ -18,4 +18,4 @@ class PlayerQueue{
 
 };
 
-#endif //TERM_PROJECT_220_GAME_H
+#endif //TERM_PROJECT_220_PLAYERQUEUE_H
