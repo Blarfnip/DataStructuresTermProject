@@ -33,5 +33,7 @@
 
 
 # Cmake stuff
-*/cmake-build-debug
+cmake-build-debug/
 workspace.xml
+*.xml
+*.includecache

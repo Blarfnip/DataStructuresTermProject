@@ -1,3 +1,0 @@
-/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/cmake-build-debug/CMakeFiles/project.dir
-/cygdrive/c/Users/Milo Rue/Desktop/Term Project/project/cmake-build-debug/CMakeFiles/edit_cache.dir
