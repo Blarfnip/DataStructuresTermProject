@@ -4,10 +4,10 @@
 
 #include "PlayerNode.h"
 
-PlayerNode::PlayerNode(Player* player) {
+PlayerNode::PlayerNode(Player *player) {
     next= nullptr;
-    this->player=player;
-    this->forceRating=10000;
+    this->player=player; //inserts player pointer into the node
+    this->forceRating=10000; //forces a high rating
 }
 PlayerNode::PlayerNode(const PlayerNode &nodeToCopy) {
     next= nullptr;

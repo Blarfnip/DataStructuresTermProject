@@ -10,28 +10,72 @@
 
 class Player{
 private:
+
+    //checks for humanity
     bool isPlayer = false;
+
+    //rating determines queue placement and matchmaking
     int rank=0;
+
+    //# of games won
     int wins=0;
+
+    //# of games won in a row as of current (resets upon loss)
     int winstreak=0;
+
+    //total # of games played
     int games=0;
+
+    //amount of rating gained per win (scales on winstreak)
     int gain=5;
+
+    //amount of rating lost per loss (scales on lossTrend)
     int loss=5;
+
+    //# of losses in a row as of current (resets upon win)
     int lossTrend=0;
+
+    //string Identifier
     std::string playerID;
+
+    //unused password
     std::string password;
 public:
+
+    //constructor
     Player(std::string playerIDIn);
+
+    //copy constructor
     Player(const Player& playerToCopy);
+
+    //gets the player ID
     std::string getID();
+
+    //initializes a "win" for the player
     void won();
+
+    //initializes a "loss" for the player
     void lost();
+
+    //returns rating of player (int)
     int getRank();
+
+    //returns an int of games won
     int getWins();
+
+    //returns an int of games played
     int getGames();
+
+    //creates a guess for the desired game
     int generateGuess();
+
+    //changes the playerID if a valid password is given
     void changeID(std::string newID, std::string userPassIn);
+
+    //sets the password (unprotected)
     void setPass(std::string userPassIn);
+
+    //returns a string representation of rating
     std::string checkTier();
 
 

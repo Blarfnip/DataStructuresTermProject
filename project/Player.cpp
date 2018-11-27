@@ -20,11 +20,11 @@ int Player::getGames() {
     return games;
 }
 void Player::setPass(std::string userPassIn) {
-    this->password=userPassIn;
+    this->password=userPassIn; //sets new pass
 }
 
 void Player::changeID(std::string newID, std::string userPassIn) {
-    if(userPassIn==password){
+    if(userPassIn==password){ //if the password is correct it allows changes
         this->playerID=newID;
     }
     else{
@@ -33,57 +33,58 @@ void Player::changeID(std::string newID, std::string userPassIn) {
 
 }
 void Player::won() {
-    games+=1;
-    wins+=1;
-    winstreak+=1;
+    games+=1; //adds 1 to game count
+    wins+=1; //adds 1 to win count
+    winstreak+=1; //increments winstreak counter
+    lossTrend=0; //resets lossTrend
     if(winstreak>=3 and winstreak < 5){
-        rank+=gain*2;
+        rank+=gain*2; //if winstreak is 3 to 4 than the rating gain is doubled
     }
     else if(winstreak >=5 and winstreak <10){
-        rank+=gain*3;
+        rank+=gain*3; //if winstreak is 5 to 9 than rating gain is tripled
     }
     else if(winstreak >=10){
-        rank+=gain*4;
+        rank+=gain*4; //any winstreak larger than 10 is rating gain x4
     }
     else{
-        rank+=gain;
+        rank+=gain; //if winstreak less than 3 than gain is normal
     }
 }
 
 void Player::lost() {
-    games+=1;
-    winstreak=0;
-    lossTrend+=1;
-    if(lossTrend >=3){
-        rank-=10;
+    games+=1; //adds 1 to game count
+    winstreak=0; //resets winstreak
+    lossTrend+=1; //adds 1 to lossTrend
+    if(lossTrend >=5){
+        rank-=loss*2;
     }
     else{
-        rank-=5;
+        rank-=loss;
     }
 }
 
 std::string Player::checkTier() {
-    if(rank>=0 and rank<101){
+    if(rank>=0 and rank<101){ //checks for bronze
         return "Bronze";
     }
-    else if(rank>=101 and rank<200){
+    else if(rank>=101 and rank<200){ //checks for silver
         return "Silver";
     }
-    else if(rank>=201 and rank<301){
+    else if(rank>=201 and rank<301){ //checks for gold
         return "Gold";
     }
-    else if(rank>=301 and rank <401){
+    else if(rank>=301 and rank <401){ //checks for plat
         return "Platinum";
     }
-    else if(rank>=401 and rank <501){
+    else if(rank>=401 and rank <501){ //checks for diamond
         return "Diamond";
     }
-    else if(rank>=501){
+    else if(rank>=501){ //checks for NoLifers rank
         return "NoLifers";
     }
 }
 
-int Player::generateGuess() {
+int Player::generateGuess() { //creates a random guess between 1-100
     if(!isPlayer) {
         return genRandInt(1,100);
     }

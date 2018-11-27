@@ -2,21 +2,42 @@
 // Created by Milo Rue on 11/12/2018.
 //
 
-#ifndef TERM_PROJECT_220_GAME_H
-#define TERM_PROJECT_220_GAME_H
+#ifndef TERM_PROJECT_220_PLAYERQUEUE_H
+#define TERM_PROJECT_220_PLAYERQUEUE_H
+#include "PlayerNode.h"
 #include "Player.h"
-#include "string"
-#include "iostream"
-#include "stdlib.h"
-#include "time.h"
 
 
 class PlayerQueue{
+private:
+    PlayerNode* front; //holds the front of the queue
+    PlayerNode* back; //holds the back of the queue
+public:
+
+    //constructor
     PlayerQueue();
-    //importFile(filename);
+
+    //copy constructor
+    PlayerQueue(const PlayerQueue& queueToCopy);
+
+    //assignment operator
+    PlayerQueue& operator=(const PlayerQueue& queueToCopy);
+
+    //destructor
+    ~PlayerQueue();
+
+    //enqueues players with a priority based on rating
+    void enqueue(Player* playerIn, float priorityToAdd);
+
+    //removes a player and returns a pointer to that player
+    Player* dequeue();
+
+    //checks if queue is empty
+    bool isEmpty();
+
 
 
 
 };
 
-#endif //TERM_PROJECT_220_GAME_H
+#endif //TERM_PROJECT_220_PLAYERQUEUE_H
