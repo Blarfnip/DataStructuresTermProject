@@ -4,16 +4,22 @@
 
 #ifndef TERM_PROJECT_220_GAME_H
 #define TERM_PROJECT_220_GAME_H
-#include "Player.h"
 #include "string"
 #include "iostream"
 #include "stdlib.h"
 #include "time.h"
+#include "Player.h"
 
 
-class PlayerQueue{
-    PlayerQueue();
+class PlayerNode{
+private:
     //importFile(filename);
+    Player player;
+    PlayerNode* next;
+public:
+    PlayerNode(Player player);
+    PlayerNode(const PlayerNode& nodeToCopy);
+    int getItem();
 
 
 

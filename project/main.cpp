@@ -38,6 +38,6 @@ int main() {
 //    g1->play(*player1,*player2);
 
     //std::cout << player1->getWins() << " " << player2->getWins() << std::endl;
->>>>>>> c6f091f035dc4647204bceba803f585f2ba6d159
+
 
 }

@@ -3,7 +3,7 @@
 //
 
 #include "ArrayList.h"
-#include "../../220-lab-09/ArrayLib.h"
+#include "ArrayLib.h"
 
 template <class T>
 void ArrayList<T>::doubleCapacity() {
