@@ -4,6 +4,7 @@
 
 #include "ArrayList.h"
 
+
 template <class T>
 void ArrayList<T>::doubleCapacity() {
     currCapacity *= 2;
