@@ -56,15 +56,25 @@ void Player::lost() {
     winstreak=0; //resets winstreak
     lossTrend+=1; //adds 1 to lossTrend
     if(lossTrend >=5){
-        rank-=loss*2;
+        if(rank-loss*2<0){
+            rank=0;
+        }
+        else {
+            rank -= loss * 2;
+        }
     }
     else{
-        rank-=loss;
+        if(rank-loss<0){
+            rank=0;
+        }
+        else {
+            rank -= loss;
+        }
     }
 }
 
 std::string Player::checkTier() {
-    if(rank>=0 and rank<101){ //checks for bronze
+    if(rank<101){ //checks for bronze
         return "Bronze";
     }
     else if(rank>=101 and rank<200){ //checks for silver
@@ -80,7 +90,7 @@ std::string Player::checkTier() {
         return "Diamond";
     }
     else if(rank>=501){ //checks for NoLifers rank
-        return "NoLifers";
+        return "Challenger";
     }
 }
 

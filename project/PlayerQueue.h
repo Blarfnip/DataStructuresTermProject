@@ -28,7 +28,7 @@ public:
     ~PlayerQueue();
 
     //enqueues players with a priority based on rating
-    void enqueue(Player* playerIn, float priorityToAdd);
+    void enqueue(Player* playerIn);
 
     //removes a player and returns a pointer to that player
     PlayerNode* dequeue();
@@ -37,6 +37,8 @@ public:
     //true is empty
     //false if not
     bool isEmpty();
+
+    std::string toString();
 
 
 
