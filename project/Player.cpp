@@ -84,9 +84,29 @@ std::string Player::checkTier() {
     }
 }
 
+//Sets player to user or AI
+void Player::setIsPlayer(bool val) {
+    isPlayer = val;
+}
+
 int Player::generateGuess() { //creates a random guess between 1-100
-    if(!isPlayer) {
+    if(!isPlayer) { //If player is AI
         return genRandInt(1,100);
+    } else { //If Player is User
+        //TODO: Separate this to another data structure
+        std::cout << "Please give me your guess (1-100): ";
+        std::string guess = "0";
+        std::getline(std::cin, guess);// >> guess;
+        std::cout << std::endl;
+        return std::stoi(guess);
     }
+}
+
+
+void Player::setRank(int val) {
+    rank = val; //overrides rank
+}
+void Player::addToRank(int val) {
+    rank += val; //adds to rank
 }
 

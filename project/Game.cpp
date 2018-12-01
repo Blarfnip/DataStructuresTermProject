@@ -3,7 +3,6 @@
 //
 
 #include "Game.h"
-#include "ArrayLib.h"
 
 Game::Game(Player* player1, Player* player2) {
     this->player1 = player1;
@@ -25,6 +24,7 @@ void Game::play() {
     int difference1;
     int difference2;
 
+    //Determines wins based on guesses and solution
     if (p1Guess > solution) {
         difference1=p1Guess-solution;
     }

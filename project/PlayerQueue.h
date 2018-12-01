@@ -4,6 +4,7 @@
 
 #ifndef TERM_PROJECT_220_PLAYERQUEUE_H
 #define TERM_PROJECT_220_PLAYERQUEUE_H
+
 #include "PlayerNode.h"
 #include "Player.h"
 

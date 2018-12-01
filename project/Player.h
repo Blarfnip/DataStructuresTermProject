@@ -57,6 +57,15 @@ public:
     //initializes a "loss" for the player
     void lost();
 
+    //Sets if player is person or AI
+    void setIsPlayer(bool val);
+
+    //Sets rank to val
+    void setRank(int val);
+
+    //Adds val to current rank
+    void addToRank(int val);
+
     //returns rating of player (int)
     int getRank();
 
