@@ -30,9 +30,11 @@ public:
     void enqueue(Player* playerIn, float priorityToAdd);
 
     //removes a player and returns a pointer to that player
-    Player* dequeue();
+    PlayerNode* dequeue();
 
     //checks if queue is empty
+    //true is empty
+    //false if not
     bool isEmpty();
 
 

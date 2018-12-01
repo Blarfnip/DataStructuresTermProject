@@ -4,8 +4,9 @@
 
 #include "PlayerNode.h"
 
-PlayerNode::PlayerNode(Player *player) {
+PlayerNode::PlayerNode(Player *player, float priority) {
     next= nullptr;
+    this->priority=priority; //sets priority of the node
     this->player=player; //inserts player pointer into the node
     this->forceRating=10000; //forces a high rating
 }
@@ -27,5 +28,13 @@ void PlayerNode::setNext(PlayerNode* newNext) {
 
 void PlayerNode::setPlayer(Player* newPlayer) {
     player=newPlayer;
+}
+
+void PlayerNode::setPriority(float priority) {
+    this->priority=priority;
+}
+
+float PlayerNode::getPriority() {
+    return priority;
 }
 
