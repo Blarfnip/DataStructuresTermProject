@@ -13,6 +13,7 @@ class PlayerQueue{
 private:
     PlayerNode* front; //holds the front of the queue
     PlayerNode* back; //holds the back of the queue
+    int count=0;
 public:
 
     //constructor
@@ -41,6 +42,8 @@ public:
     std::string toString();
 
     std::string toLeaderboard();
+
+    int getCount();
 
 
 

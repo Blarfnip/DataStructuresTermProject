@@ -23,6 +23,19 @@ int Player::getGames() {
 int Player::getTies() {
     return ties;
 }
+
+int Player::getRocks() {
+    return rocks;
+}
+
+int Player::getPapers() {
+    return papers;
+}
+
+int Player::getScissors() {
+    return scissors;
+}
+
 void Player::setPass(std::string userPassIn) {
     this->password=userPassIn; //sets new pass
 }
@@ -125,7 +138,17 @@ void Player::setIsPlayer(bool val) {
 
 int Player::generateGuess() { //creates a random guess between 1-100
     if(!isPlayer) { //If player is AI
-        return genRandInt(1,3);
+        int num=genRandInt(1,3);
+        if(num==1){
+            rocks++;
+        }
+        else if(num==2){
+            papers++;
+        }
+        else if(num==3){
+            scissors++;
+        }
+        return num;
     } else { //If Player is User
         //TODO: Separate this to another data structure
         std::cout << "Please give me your guess (1-100): ";

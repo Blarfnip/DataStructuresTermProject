@@ -84,6 +84,42 @@ int main() {
     std::cout << outStringD << std::endl;
     std::cout << outStringC << std::endl;
 
+
+    std::string playerCountB="Bronze Player Counts: "+ std::to_string(bronzeQueue->getCount());
+    std::string playerCountS="Silver Player Counts: "+ std::to_string(silverQueue->getCount());
+    std::string playerCountG="Gold Player Counts: "+ std::to_string(goldQueue->getCount());
+    std::string playerCountP="Platinum Player Counts: "+ std::to_string(platinumQueue->getCount());
+    std::string playerCountD="Diamond Player Counts: "+ std::to_string(diamondQueue->getCount());
+    std::string playerCountC="Challenger Player Counts: "+ std::to_string(challengerQueue->getCount());
+    std::cout << "=====================================================================" << std::endl;
+    std::cout << playerCountB << std::endl;
+    std::cout << playerCountS << std::endl;
+    std::cout << playerCountG << std::endl;
+    std::cout << playerCountP << std::endl;
+    std::cout << playerCountD << std::endl;
+    std::cout << playerCountC << std::endl;
+    std::cout << "=====================================================================" << std::endl;
+    int rockCountsTotal=0;
+    int paperCountsTotal=0;
+    int scissorsCountTotal=0;
+
+//    Player* temp1Player;
+//
+//    for(int i = 0; i<100; i++){
+//        temp1Player=playerList->removeValueAtFront();
+//        rockCountsTotal+=temp1Player->getRocks();
+//        paperCountsTotal+=temp1Player->getPapers();
+//        scissorsCountTotal+=temp1Player->getScissors();
+//    }
+//
+//    std::cout << "Rocks thrown: " + std::to_string(rockCountsTotal) << std::endl;
+//    std::cout << "Papers crumpled: " + std::to_string(paperCountsTotal) << std::endl;
+//    std::cout << "Scissors sliced: " + std::to_string(scissorsCountTotal) << std::endl;
+
+
+
+
+
 //    std::string leaderTest = bronzeQueue->toLeaderboard();
 //    std::cout << leaderTest << std::endl;
 

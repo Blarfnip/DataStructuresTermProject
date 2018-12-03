@@ -43,6 +43,15 @@ private:
 
     //tie count
     int ties=0;
+
+    //rock count
+    int rocks=0;
+
+    //paper count
+    int papers=0;
+
+    //scissor count
+    int scissors=0;
 public:
 
     //constructor
@@ -80,6 +89,15 @@ public:
 
     //returns an int of tied games
     int getTies();
+
+    //returns rocks amt
+    int getRocks();
+
+    //returns papers amt
+    int getPapers();
+
+    //returns scissors amt
+    int getScissors();
 
     //creates a guess for the desired game
     int generateGuess();

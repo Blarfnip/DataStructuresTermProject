@@ -68,10 +68,12 @@ void PlayerQueue::enqueue(Player *playerIn) { //priority only allows for low_pri
     if(front== nullptr){
         front=newNode;
         back=newNode;
+        count++;
     }
     else{
         back->setNext(newNode);
         back= newNode;
+        count++;
     }
 //    else{
 //        if(front->getPriority()==newNode->getPriority()){ //when priorities are the same it just acts like a normal queue
@@ -114,6 +116,7 @@ PlayerNode* PlayerQueue::dequeue() {
     else {
         PlayerNode *dequeuedPlayer = front;
         front = front->getNext();
+        count--;
         return dequeuedPlayer;
     }
 }
@@ -135,6 +138,10 @@ std::string PlayerQueue::toString() {
         helpPtr=helpPtr->getNext();
     }
     return outStr;
+}
+
+int PlayerQueue::getCount() {
+    return count;
 }
 
 std::string PlayerQueue::toLeaderboard() {
