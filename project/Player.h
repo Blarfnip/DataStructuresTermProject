@@ -40,6 +40,9 @@ private:
 
     //unused password
     std::string password;
+
+    //tie count
+    int ties=0;
 public:
 
     //constructor
@@ -75,6 +78,9 @@ public:
     //returns an int of games played
     int getGames();
 
+    //returns an int of tied games
+    int getTies();
+
     //creates a guess for the desired game
     int generateGuess();
 
@@ -86,6 +92,8 @@ public:
 
     //returns a string representation of rating
     std::string checkTier();
+
+    void tie();
 
 
 };

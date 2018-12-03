@@ -19,11 +19,11 @@ int main() {
     //playerList->getValueAt(0)->setIsPlayer(true);
 
     //Runs 100 matches with each player
-    for(int k = 0; k < 20; k++) {
+    for(int k = 0; k < 1000; k++) {
         for(int i = 0; i < 100; i += 2) {
             Game* testGame = new Game(playerList->getValueAt(i), playerList->getValueAt(i + 1));
             testGame->collectGuesses();
-            testGame->generateSolution();
+            //testGame->generateSolution(); *changed game to rock paper scissors format
             testGame->play();
             delete testGame;
         }
@@ -83,4 +83,14 @@ int main() {
     std::cout << outStringP << std::endl;
     std::cout << outStringD << std::endl;
     std::cout << outStringC << std::endl;
+
+//    std::string leaderTest = bronzeQueue->toLeaderboard();
+//    std::cout << leaderTest << std::endl;
+
+//    Player* testPlayer = new Player("testPlayer");
+//    for(int l=0;l<=100; l++) {
+//        int guess = testPlayer->generateGuess();
+//        std::cout << guess << std::endl;
+//    }
+
 }

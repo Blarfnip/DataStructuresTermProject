@@ -2,6 +2,8 @@
 // Created by Milo Rue on 11/12/2018.
 //
 #include "PlayerQueue.h"
+#include "ArrayList.h"
+#include "ArrayLib.h"
 
 PlayerQueue::PlayerQueue() {
     front= nullptr; //empty ptr
@@ -135,3 +137,53 @@ std::string PlayerQueue::toString() {
     return outStr;
 }
 
+std::string PlayerQueue::toLeaderboard() {
+    PlayerNode* helpPtr=front; //helper
+    std::string outStr= ""; //blank string
+    int size=100;
+    List<int>* leaderboard = new ArrayList<int>(size);
+    while(helpPtr!= nullptr){
+        leaderboard->insertAtEnd(helpPtr->getPlayer()->getRank());
+        helpPtr=helpPtr->getNext();
+    }
+    helpPtr=front;
+
+    List<std::string>* id = new ArrayList<std::string>(size);
+    while(helpPtr!= nullptr){
+        id->insertAtEnd(helpPtr->getPlayer()->getID());
+        helpPtr=helpPtr->getNext();
+    }
+
+
+//    PlayerNode* topPlayer;
+//    std::string outStr="";
+//    int place=1;
+//    int max=0;
+//    int min=100;
+//    while(max!=min){
+//        if(helpPtr->getPlayer()->getRank()>=max and helpPtr!=topPlayer){
+//            max=helpPtr->getPlayer()->getRank();
+//            topPlayer=helpPtr;
+//            helpPtr=helpPtr->getNext();
+//            outStr+=std::to_string(place) + " " + topPlayer->getPlayer()->getID() + ": " + "Rating: " + std::to_string(max);
+//            place++;
+//        }
+//        if(helpPtr->getPlayer()->getRank()<=min){
+//            min=helpPtr->getPlayer()->getRank();
+//        }
+//        else{
+//            helpPtr=helpPtr->getNext();
+//        }
+//
+//    }
+//    return outStr;
+}
+
+//std::string PlayerQueue::toLeaderboard(){
+//    PlayerNode* helpPtr=front;
+//    std::string outStr="Leaderboard: ";
+//    while(helpPtr!= nullptr){
+//
+//    }
+//
+//}

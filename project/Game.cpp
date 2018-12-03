@@ -21,40 +21,85 @@ void Game::generateSolution() {
 
 
 void Game::play() {
-    int difference1;
-    int difference2;
-
-    //Determines wins based on guesses and solution
-    if (p1Guess > solution) {
-        difference1=p1Guess-solution;
-    }
-    if(p1Guess < solution){
-        difference1=solution-p1Guess;
-    }
-    if(p2Guess > solution) {
-        difference2=p2Guess-solution;
-    }
-    if(p2Guess < solution) {
-        difference2=p2Guess-solution;
-    }
-    if(p1Guess==solution){
-        player1->won();
-        player2->lost();
-    }
-    if(difference1<difference2){
-        player1->won();
-        player2->lost();
+    if(p1Guess==1 and p2Guess==1){ //1 is rock and 2 is rock
+        player1->tie();
+        player2->tie();
     }
 
-    else if(difference2<difference1){
+    else if(p1Guess==1 and p2Guess==2){ //1 is rock and 2 is paper
         player2->won();
         player1->lost();
-
     }
-    else if(difference1==difference2){
+
+    else if(p1Guess==1 and p2Guess==3){ //1 is rock and 3 is scissors
         player1->won();
         player2->lost();
     }
+
+    else if(p1Guess==2 and p2Guess==1){//1 is paper and 2 is rock
+        player1->won();
+        player2->lost();
+    }
+
+    else if(p1Guess==2 and p2Guess==2){//1 is paper and 2 is paper
+        player1->tie();
+        player2->tie();
+    }
+
+    else if(p1Guess==2 and p2Guess==3){//1 is paper and 2 is scissors
+        player2->won();
+        player1->lost();
+    }
+
+    else if(p1Guess==3 and p2Guess==1){//1 is scissors and 2 is rock
+        player2->won();
+        player1->lost();
+    }
+
+    else if(p1Guess==3 and p2Guess==2){//1 is scissors and 2 is paper
+        player1->won();
+        player2->lost();
+    }
+
+    else if(p1Guess==3 and p2Guess==3){//1 is scissors and 2 is scissors
+        player1->tie();
+        player2->tie();
+    }
+
+//    int difference1;
+//    int difference2;
+//
+//    //Determines wins based on guesses and solution
+//    if (p1Guess > solution) {
+//        difference1=p1Guess-solution;
+//    }
+//    if(p1Guess < solution){
+//        difference1=solution-p1Guess;
+//    }
+//    if(p2Guess > solution) {
+//        difference2=p2Guess-solution;
+//    }
+//    if(p2Guess < solution) {
+//        difference2=p2Guess-solution;
+//    }
+//    if(p1Guess==solution){
+//        player1->won();
+//        player2->lost();
+//    }
+//    else if(difference1<difference2){
+//        player1->won();
+//        player2->lost();
+//    }
+//
+//    else if(difference2<difference1){
+//        player2->won();
+//        player1->lost();
+//
+//    }
+//    else if(difference1==difference2){
+//        player1->tie();
+//        player2->tie();
+//    }
 
 }
 

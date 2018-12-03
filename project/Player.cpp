@@ -19,6 +19,10 @@ int Player::getWins() {
 int Player::getGames() {
     return games;
 }
+
+int Player::getTies() {
+    return ties;
+}
 void Player::setPass(std::string userPassIn) {
     this->password=userPassIn; //sets new pass
 }
@@ -55,7 +59,7 @@ void Player::lost() {
     games+=1; //adds 1 to game count
     winstreak=0; //resets winstreak
     lossTrend+=1; //adds 1 to lossTrend
-    if(lossTrend >=5){
+    if(lossTrend >=3 and lossTrend < 5){
         if(rank-loss*2<0){
             rank=0;
         }
@@ -63,14 +67,34 @@ void Player::lost() {
             rank -= loss * 2;
         }
     }
+    else if(lossTrend >=5 and lossTrend <10){
+        if(rank-loss*3<0){
+            rank=0;
+        }
+        else {
+            rank -= loss * 3;
+        }
+    }
+    else if(lossTrend >=10){
+        if(rank-loss*4<0){
+            rank=0;
+        }
+        else{
+            rank -=loss * 4;
+        }
+    }
     else{
         if(rank-loss<0){
             rank=0;
         }
-        else {
-            rank -= loss;
+        else{
+            rank-=loss;
         }
     }
+}
+void Player::tie(){
+    games+=1;
+    ties+=1;
 }
 
 std::string Player::checkTier() {
@@ -101,7 +125,7 @@ void Player::setIsPlayer(bool val) {
 
 int Player::generateGuess() { //creates a random guess between 1-100
     if(!isPlayer) { //If player is AI
-        return genRandInt(1,100);
+        return genRandInt(1,3);
     } else { //If Player is User
         //TODO: Separate this to another data structure
         std::cout << "Please give me your guess (1-100): ";

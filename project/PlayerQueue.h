@@ -40,6 +40,8 @@ public:
 
     std::string toString();
 
+    std::string toLeaderboard();
+
 
 
 
