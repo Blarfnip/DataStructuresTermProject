@@ -8,6 +8,7 @@
 #include "ArrayList.h"
 #include "PlayerQueue.h"
 #include "PlayerNode.h"
+#include "MatchMaker.h"
 
 /**
  * FileIO implementation
@@ -49,7 +50,7 @@ void printPlayerListToFile(List<Player*>* pList, std::string filename){
     }
 }
 
-void addPlayersFromFile(List<Player*>* playerListToChange, const std::string& filename){\
+void addPlayersFromFile(List<Player*>* playerListToChange, const std::string& filename){
 
 
     Player* inPlayer;

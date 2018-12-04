@@ -4,10 +4,20 @@
 
 #ifndef PROJECT_MATCHMAKER_H
 #define PROJECT_MATCHMAKER_H
+#include "Player.h"
+#include "Game.h"
+#include "ArrayList.h"
+#include "PlayerQueue.h"
+#include "PlayerNode.h"
 
 
 class MatchMaker {
-
+private:
+    ;
+public:
+    void playMatches(List<Player*>* playerList,int numOfMatches, int index);
+    void playersWon(List<Player*>* playerList);
+    List<Player*>* createPlayerList(List<Player*>* playerList,int numOfPlayers,int index);
 };
 
 
