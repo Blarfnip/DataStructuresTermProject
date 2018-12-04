@@ -70,6 +70,7 @@ void Player::won() {
 
 void Player::lost() {
     games+=1; //adds 1 to game count
+    losses++; //adds 1 to loss count
     winstreak=0; //resets winstreak
     lossTrend+=1; //adds 1 to lossTrend
     if(lossTrend >=3 and lossTrend < 5){
@@ -166,4 +167,15 @@ void Player::setRank(int val) {
 void Player::addToRank(int val) {
     rank += val; //adds to rank
 }
+
+//careful as this artificially inflates games played stats and doesnt change rank based on the stats inputted for games played
+void Player::setPlace(int gamesIn, int winsIn, int lossesIn, int tiesIn) {
+    games+=gamesIn;
+    wins+=winsIn;
+    losses+=lossesIn;
+    ties+=tiesIn;
+}
+
+//TODO: Possibility of setPlace for creating artificial players that runs games based
+//TODO: on what you put to create more accurate ranking stats, wouldn't allow for rank input though
 

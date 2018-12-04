@@ -1,10 +1,73 @@
 #include <iostream>
+#include <sstream>
+#include <fstream>
+
 
 #include "Player.h"
 #include "Game.h"
 #include "ArrayList.h"
 #include "PlayerQueue.h"
 #include "PlayerNode.h"
+
+/**
+ * FileIO implementation
+ * Writes existing player list to a file
+ * Can read new player list from a text file as well as a string
+ */
+
+Player* createPlayerFromString(const std::string playerString){
+    std::stringstream splitter (playerString);
+    std::string playerID, rank;
+
+    getline(splitter, playerID, ',');
+    getline(splitter, rank, ',');
+//    getline(splitter, games, ',');
+//    getline(splitter, wins, ',');
+//    getline(splitter, losses, ',');
+//    getline(splitter, ties, ',');
+
+    Player* newPlayer = new Player(playerID);
+    newPlayer->setRank(std::stoi(rank));
+    return newPlayer;
+}
+
+void addHardCodedPlayers(List<Player*>* playerListToChange){
+    playerListToChange->insertAtEnd(createPlayerFromString("Dummy_Player, 100"));
+    playerListToChange->insertAtEnd(createPlayerFromString("Dummy_Player1, 200"));
+    playerListToChange->insertAtEnd(createPlayerFromString("Dummy_Player2, 300"));
+    playerListToChange->insertAtEnd(createPlayerFromString("Dummy_Player3, 400"));
+    playerListToChange->insertAtEnd(createPlayerFromString("Dummy_Player4, 500"));
+    playerListToChange->insertAtEnd(createPlayerFromString("Dummy_Player5, 600"));
+}
+
+void printPlayerListToFile(List<Player*>* pList, std::string filename){
+    std::ofstream outf(filename);
+    if(outf){
+        for(int f=0; f<pList->itemCount(); f++){
+            outf << pList->getValueAt(f)->getID() + ", "  + std::to_string(pList->getValueAt(f)->getRank()) << std::endl;
+        }
+    }
+}
+
+void addPlayersFromFile(List<Player*>* playerListToChange, const std::string& filename){\
+
+
+    Player* inPlayer;
+    std::ifstream infile(filename);
+
+    if(infile){
+        while(infile){
+            std::string line;
+            getline(infile, line);
+            inPlayer=createPlayerFromString(line);
+            playerListToChange->insertAtEnd(inPlayer);
+        }
+    }
+    else{
+        throw std::out_of_range("FILE NOT FOUND");
+    }
+
+}
 
 int main() {
     srand(time(NULL)); //Seeds random numbers
@@ -33,6 +96,25 @@ int main() {
     for(int i = 0; i < 100; i++) {
         std::cout<< playerList->getValueAt(i)->getID() << " | " << playerList->getValueAt(i)->getWins() <<std::endl;
     }
+
+    std::cout << "=====================================================================" << std::endl;
+
+    List<Player*>* ioTest = new ArrayList<Player*>(120);
+    addHardCodedPlayers(ioTest);
+    std::cout << ioTest->getValueAt(0)->getID() + " " + std::to_string(ioTest->getValueAt(0)->getRank())<< std::endl;
+    std::cout << ioTest->getValueAt(1)->getID() + " " + std::to_string(ioTest->getValueAt(1)->getRank())<< std::endl;
+    std::cout << ioTest->getValueAt(2)->getID() + " " + std::to_string(ioTest->getValueAt(2)->getRank())<< std::endl;
+    std::cout << ioTest->getValueAt(3)->getID() + " " + std::to_string(ioTest->getValueAt(3)->getRank())<< std::endl;
+    std::cout << ioTest->getValueAt(4)->getID() + " " + std::to_string(ioTest->getValueAt(4)->getRank())<< std::endl;
+    std::cout << ioTest->getValueAt(5)->getID() + " " + std::to_string(ioTest->getValueAt(5)->getRank())<< std::endl;
+
+    printPlayerListToFile(playerList, "playerOutput.csv");
+//    addPlayersFromFile(ioTest, "playerOutput.csv");
+//    std::cout << "=====================================================================" << std::endl;
+//    std::cout << "Players inputted from file:" << std::endl;
+//    for(int s = 0; s<ioTest->itemCount(); s++){
+//        std::cout << ioTest->getValueAt(s)->getID() + " " + std::to_string(ioTest->getValueAt(s)->getRank()) << std::endl;
+//    }
 
     //creates queues for ratings
     PlayerQueue* bronzeQueue= new PlayerQueue();
@@ -103,6 +185,12 @@ int main() {
     int paperCountsTotal=0;
     int scissorsCountTotal=0;
 
+
+
+
+
+
+
 //    Player* temp1Player;
 //
 //    for(int i = 0; i<100; i++){
@@ -115,10 +203,6 @@ int main() {
 //    std::cout << "Rocks thrown: " + std::to_string(rockCountsTotal) << std::endl;
 //    std::cout << "Papers crumpled: " + std::to_string(paperCountsTotal) << std::endl;
 //    std::cout << "Scissors sliced: " + std::to_string(scissorsCountTotal) << std::endl;
-
-
-
-
 
 //    std::string leaderTest = bronzeQueue->toLeaderboard();
 //    std::cout << leaderTest << std::endl;

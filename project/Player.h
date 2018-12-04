@@ -20,6 +20,9 @@ private:
     //# of games won
     int wins=0;
 
+    //# of games lost
+    int losses=0;
+
     //# of games won in a row as of current (resets upon loss)
     int winstreak=0;
 
@@ -111,8 +114,11 @@ public:
     //returns a string representation of rating
     std::string checkTier();
 
+    //accounts for ties in game and reruns the game till not a tie
     void tie();
 
+    //a way to edit games,wins,and losses for file input of randomized players
+    void setPlace(int gamesIn, int winsIn, int lossesIn, int tiesIn);
 
 };
 
