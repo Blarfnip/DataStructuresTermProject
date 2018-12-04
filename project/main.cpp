@@ -46,6 +46,7 @@ void printPlayerListToFile(List<Player*>* pList, std::string filename){
         for(int f=0; f<pList->itemCount(); f++){
             outf << pList->getValueAt(f)->getID() + ", "  + std::to_string(pList->getValueAt(f)->getRank()) << std::endl;
         }
+        outf.close();
     }
 }
 
@@ -59,13 +60,18 @@ void addPlayersFromFile(List<Player*>* playerListToChange, const std::string& fi
         while(infile){
             std::string line;
             getline(infile, line);
-            inPlayer=createPlayerFromString(line);
-            playerListToChange->insertAtEnd(inPlayer);
+            if(line==""){
+
+            }
+            else if(line!="") {
+                inPlayer = createPlayerFromString(line);
+                playerListToChange->insertAtEnd(inPlayer);
+            }
         }
+
     }
-    else{
-        throw std::out_of_range("FILE NOT FOUND");
-    }
+
+    infile.close();
 
 }
 
@@ -100,6 +106,7 @@ int main() {
     std::cout << "=====================================================================" << std::endl;
 
     List<Player*>* ioTest = new ArrayList<Player*>(120);
+    List<Player*>* testList = new ArrayList<Player*>(100);
     addHardCodedPlayers(ioTest);
     std::cout << ioTest->getValueAt(0)->getID() + " " + std::to_string(ioTest->getValueAt(0)->getRank())<< std::endl;
     std::cout << ioTest->getValueAt(1)->getID() + " " + std::to_string(ioTest->getValueAt(1)->getRank())<< std::endl;
@@ -108,13 +115,14 @@ int main() {
     std::cout << ioTest->getValueAt(4)->getID() + " " + std::to_string(ioTest->getValueAt(4)->getRank())<< std::endl;
     std::cout << ioTest->getValueAt(5)->getID() + " " + std::to_string(ioTest->getValueAt(5)->getRank())<< std::endl;
 
+    std::cout << "========================" << std::endl;
     printPlayerListToFile(playerList, "playerOutput.csv");
-//    addPlayersFromFile(ioTest, "playerOutput.csv");
-//    std::cout << "=====================================================================" << std::endl;
-//    std::cout << "Players inputted from file:" << std::endl;
-//    for(int s = 0; s<ioTest->itemCount(); s++){
-//        std::cout << ioTest->getValueAt(s)->getID() + " " + std::to_string(ioTest->getValueAt(s)->getRank()) << std::endl;
-//    }
+    addPlayersFromFile(ioTest, "playerOutput.csv");
+
+    for(int s = 0; s<playerList->itemCount(); s++){
+        std::cout << ioTest->getValueAt(s)->getID() + " " + std::to_string(ioTest->getValueAt(s)->getRank()) << std::endl;
+    }
+    std::cout << "=====================================================================" << std::endl;
 
     //creates queues for ratings
     PlayerQueue* bronzeQueue= new PlayerQueue();
