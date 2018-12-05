@@ -194,6 +194,22 @@ int main() {
     int paperCountsTotal=0;
     int scissorsCountTotal=0;
 
+    MatchMaker* match=new MatchMaker();
+    match->playMatchesQueue(bronzeQueue,4, "bronze");
+    match->playMatchesQueue(silverQueue,4, "silver");
+    match->playMatchesQueue(goldQueue,100, "gold"); //tests overloaded games amount for queue size
+
+    std::string testQueueStrB = "Bronze Queue: ";
+    std::string testQueueStrS = "Silver Queue: ";
+    std::string testQueueStrG = "Gold Queue: ";
+
+    testQueueStrB += bronzeQueue->toString();
+    testQueueStrS += silverQueue->toString();
+    testQueueStrG += goldQueue->toString();
+    std::cout << testQueueStrB << std::endl;
+    std::cout << testQueueStrS << std::endl;
+    std::cout << testQueueStrG << std::endl;
+
 
 
 

@@ -15,8 +15,12 @@ class MatchMaker {
 private:
     ;
 public:
-    void playMatches(List<Player*>* playerList,int numOfMatches, int index);
+    void playMatchesList(List<Player*>* playerList,int numOfMatches);
+
+    void playMatchesQueue(PlayerQueue* playerQueue, int numOfMatches, std::string queueName);
+
     void playersWon(List<Player*>* playerList);
+
     List<Player*>* createPlayerList(List<Player*>* playerList,int numOfPlayers,int index);
 };
 
