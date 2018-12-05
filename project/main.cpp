@@ -211,6 +211,23 @@ int main() {
     std::cout << testQueueStrG << std::endl;
 
 
+    std::cout << bronzeQueue->getCount() << std::endl;\
+
+
+
+    match->dropQueue(bronzeQueue, "bronze"); //drops the queue and doesnt play remaining games
+
+    std::cout << silverQueue->getCount() << std::endl;
+    match->clearQueue(silverQueue, "silver"); //clears the queue by playing all the games and accounts for odd numbers of players in queues
+    std::string testQ="Bronze: " + bronzeQueue->toString();
+    std::string testK="Silver: " + silverQueue->toString();
+    std::cout << testQ << std::endl;
+    std::cout << testK << std::endl;
+
+    std::cout << std::to_string(bronzeQueue->getCount()) << std::endl;
+    std::cout << std::to_string(silverQueue->getCount()) << std::endl;
+
+
 
 
 

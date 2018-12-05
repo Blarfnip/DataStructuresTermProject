@@ -113,6 +113,13 @@ PlayerNode* PlayerQueue::dequeue() {
     if(isEmpty()){
         throw std::out_of_range("Queue is empty");
     }
+    else if(front->getNext()== nullptr){
+        back= nullptr;
+        PlayerNode* dequeuedPlayer = front;
+        count--;
+        front= nullptr;
+        return dequeuedPlayer;
+    }
     else {
         PlayerNode *dequeuedPlayer = front;
         front = front->getNext();

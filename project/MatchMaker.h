@@ -21,6 +21,10 @@ public:
 
     void playersWon(List<Player*>* playerList);
 
+    void dropQueue(PlayerQueue* playerQueueToDrop, std::string queueName);
+
+    void clearQueue(PlayerQueue* playerQueueToClear, std::string queueName);
+
     List<Player*>* createPlayerList(List<Player*>* playerList,int numOfPlayers,int index);
 };
 

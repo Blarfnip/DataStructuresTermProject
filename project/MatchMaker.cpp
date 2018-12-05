@@ -28,8 +28,8 @@ void MatchMaker::playMatchesQueue(PlayerQueue *playerQueue, int numOfMatches, st
         total=total/2;
     }
     if( numOfMatches>total){
-        std::cout << "Entered Match Amount is greater than that of players in " +  queueName + " queue"<< std::endl;
-        std::cout << "Played " + std::to_string(total) + " instead" << std::endl;
+        //std::cout << "Entered Match Amount is greater than that of players in " +  queueName + " queue"<< std::endl;
+        //std::cout << "Played " + std::to_string(total) + " instead" << std::endl;
         for (int f = 0; f < total; f++) {
             Game *testGame = new Game(playerQueue->dequeue()->getPlayer(), playerQueue->dequeue()->getPlayer());
             testGame->collectGuesses();
@@ -57,6 +57,32 @@ void playersWon(List<Player>* playerList){
     if(index<numOfPlayers) {
         return createPlayerList(playerList, numOfPlayers,index++);
     }
+}
+
+void MatchMaker::dropQueue(PlayerQueue *playerQueueToDrop, std::string queueName) {
+    PlayerNode* tempPlayer;
+    PlayerNode* helpPtr;
+    while(tempPlayer->getNext()!= nullptr){
+        //std::cout << playerQueueToDrop->getCount() << std::endl;
+        tempPlayer=playerQueueToDrop->dequeue();
+        helpPtr=tempPlayer;
+        tempPlayer=tempPlayer->getNext();
+        helpPtr= nullptr;
+    }
+    tempPlayer=playerQueueToDrop->dequeue();
+    tempPlayer= nullptr;
+    std::cout << "Dropped queue for: " + queueName + " queue" << std::endl;
+}
+
+void MatchMaker::clearQueue(PlayerQueue* playerQueueToClear, std::string queueName){
+    Player* tempPlayer;
+    playMatchesQueue(playerQueueToClear, playerQueueToClear->getCount(), queueName);
+    if(playerQueueToClear->getCount()==1){
+        tempPlayer=playerQueueToClear->dequeue()->getPlayer();
+        tempPlayer->won();
+    }
+    std::cout << "Cleared queue for: " + queueName + " queue" << std::endl;
+
 }
 
 

@@ -112,23 +112,27 @@ void Player::tie(){
 }
 
 std::string Player::checkTier() {
+    std::string tempStr="";
     if(rank<101){ //checks for bronze
-        return "Bronze";
+        return tempStr+="Bronze";
     }
-    else if(rank>=101 and rank<200){ //checks for silver
-        return "Silver";
+    if(rank>=101 and rank<200){ //checks for silver
+        return tempStr+="Silver";
     }
-    else if(rank>=201 and rank<301){ //checks for gold
-        return "Gold";
+    if(rank>=201 and rank<301){ //checks for gold
+        return tempStr+="Gold";
     }
-    else if(rank>=301 and rank <401){ //checks for plat
-        return "Platinum";
+    if(rank>=301 and rank <401){ //checks for plat
+        return tempStr+="Platinum";
     }
-    else if(rank>=401 and rank <501){ //checks for diamond
-        return "Diamond";
+    if(rank>=401 and rank <501){ //checks for diamond
+        return tempStr+="Diamond";
     }
-    else if(rank>=501){ //checks for NoLifers rank
-        return "Challenger";
+    if(rank>=501){ //checks for NoLifers rank
+        return tempStr+="Challenger";
+    }
+    else{
+        return tempStr+="Bronze";
     }
 }
 
