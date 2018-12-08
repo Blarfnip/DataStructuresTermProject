@@ -79,10 +79,21 @@ void addPlayersFromFile(List<Player*>* playerListToChange, const std::string& fi
 int main() {
     srand(time(NULL)); //Seeds random numbers
 
+    //TODO Tested Main:
+
+
+
     //Populates list with players
     List<Player*>* playerList = new ArrayList<Player*>(100);
     for(int i = 0; i < 100; i++) {
         playerList->insertAtEnd(new Player("Player " + std::to_string(i)));
+    }
+
+    if(playerList->isEmpty()==true){
+        std::cout << "Failed to fill list" << std::endl;
+    }
+    else{
+        std::cout << "Passed fill list test" << std::endl;
     }
 
     //Sets first player to be a user
