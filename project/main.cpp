@@ -137,6 +137,7 @@ int main() {
     std::cout << "=====================================================================" << std::endl;
 
     //creates queues for ratings
+    //change to list of queues?
     PlayerQueue* bronzeQueue= new PlayerQueue();
     PlayerQueue* silverQueue= new PlayerQueue();
     PlayerQueue* goldQueue= new PlayerQueue();
