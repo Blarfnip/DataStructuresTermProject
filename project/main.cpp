@@ -266,12 +266,22 @@ int main() {
     std::cout << match->getQueueList()->getValueAt(5)->getCount() << std::endl;
 
     match->dropQueue("bronze"); //drops the queue and doesnt play remaining games
+    //TODO clear is broken atm
     match->clearQueue("silver"); //clears the queue by playing all the games and accounts for odd numbers of players in queues
 
     match->queuesToString();
     std::cout << match->getQueueList()->getValueAt(5)->getCount() << std::endl;
     std::cout << match->getQueueList()->getValueAt(4)->getCount() << std::endl;
 
+//    match->writePlayerListToFile("playerOutput.csv");
+//    match->readPlayersFromFile("matchMaker.csv");
+//
+//    match->outputWholeListWins();
+    match->readPlayersFromFile("test.csv");
+
+    //TODO weird bug with no ranks
+
+//    match->outputWholeListWins();
 
 
 
