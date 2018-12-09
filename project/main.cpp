@@ -202,42 +202,79 @@ int main() {
     std::cout << playerCountD << std::endl;
     std::cout << playerCountC << std::endl;
     std::cout << "=====================================================================" << std::endl;
-    int rockCountsTotal=0;
-    int paperCountsTotal=0;
-    int scissorsCountTotal=0;
+
+
+
+    //spaces
+    std::cout << "BETA MATCHMAKER" << std::endl;
+    std::cout << " " << std::endl;
+    std::cout << " " << std::endl;
+    std::cout << " " << std::endl;
+    std::cout << " " << std::endl;
+    std::cout << " " << std::endl;
 
     MatchMaker* match=new MatchMaker();
-    match->playMatchesQueue(bronzeQueue,4, "bronze");
-    match->playMatchesQueue(silverQueue,4, "silver");
-    match->playMatchesQueue(goldQueue,100, "gold"); //tests overloaded games amount for queue size
+
+    std::cout << "Test match is created" << std::endl;
+
+    match->populatePlayerList(100);
+
+    std::cout << "Test player list is populated" << std::endl;
+
+    match->runMatches(1000);
+
+    match->outputListWins(50);
+    std::cout << "Tested 50 players print" << std::endl;
+
+    match->outputWholeListWins();
+    std::cout << "Tested whole list print" << std::endl;
+
+    match->initialQueue();
+    std::cout << "Tested intializing queues" << std::endl;
+
+    match->enqueueAllPlayers();
+    std::cout << "Tested enqueue all players" << std::endl;
+
+    match->queuesToString();
+    std::cout << "Tested queue to String" << std::endl;
+
+
 
     std::string testQueueStrB = "Bronze Queue: ";
     std::string testQueueStrS = "Silver Queue: ";
     std::string testQueueStrG = "Gold Queue: ";
 
-    testQueueStrB += bronzeQueue->toString();
-    testQueueStrS += silverQueue->toString();
-    testQueueStrG += goldQueue->toString();
-    std::cout << testQueueStrB << std::endl;
-    std::cout << testQueueStrS << std::endl;
-    std::cout << testQueueStrG << std::endl;
+//    testQueueStrB += bronzeQueue->toString();
+//    testQueueStrS += silverQueue->toString();
+//    testQueueStrG += goldQueue->toString();
+//    std::cout << testQueueStrB << std::endl;
+//    std::cout << testQueueStrS << std::endl;
+//    std::cout << testQueueStrG << std::endl;
 
 
-    std::cout << bronzeQueue->getCount() << std::endl;\
+    std::cout << match->getQueueList()->getValueAt(5)->getCount() << std::endl;
+    std::cout << match->getQueueList()->getValueAt(4)->getCount() << std::endl;
+    std::cout << match->getQueueList()->getValueAt(3)->getCount() << std::endl;
+    std::cout << match->getQueueList()->getValueAt(2)->getCount() << std::endl;
+    std::cout << match->getQueueList()->getValueAt(1)->getCount() << std::endl;
+    std::cout << match->getQueueList()->getValueAt(0)->getCount() << std::endl;
+
+    std::cout << "Tested counts of queues" << std::endl;
+
+    match->playMatchesQueue(10, "bronze");
+    match->queuesToString();
+    std::cout << match->getQueueList()->getValueAt(5)->getCount() << std::endl;
+
+    match->dropQueue("bronze"); //drops the queue and doesnt play remaining games
+    match->clearQueue("silver"); //clears the queue by playing all the games and accounts for odd numbers of players in queues
+
+    match->queuesToString();
+    std::cout << match->getQueueList()->getValueAt(5)->getCount() << std::endl;
+    std::cout << match->getQueueList()->getValueAt(4)->getCount() << std::endl;
 
 
 
-    match->dropQueue(bronzeQueue, "bronze"); //drops the queue and doesnt play remaining games
 
-    std::cout << silverQueue->getCount() << std::endl;
-    match->clearQueue(silverQueue, "silver"); //clears the queue by playing all the games and accounts for odd numbers of players in queues
-    std::string testQ="Bronze: " + bronzeQueue->toString();
-    std::string testK="Silver: " + silverQueue->toString();
-    std::cout << testQ << std::endl;
-    std::cout << testK << std::endl;
-
-    std::cout << std::to_string(bronzeQueue->getCount()) << std::endl;
-    std::cout << std::to_string(silverQueue->getCount()) << std::endl;
 
 
 
