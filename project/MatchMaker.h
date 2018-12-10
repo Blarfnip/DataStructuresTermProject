@@ -62,6 +62,14 @@ public:
 
     void queuesToString();
 
+    Player* createPlayerFromString(const std::string playerString);
+
+    void addHardCodedPlayers(List<Player*>* playerListToChange);
+
+    void printPlayerListToFile(List<Player*>* pList, std::string filename);
+
+    void  addPlayersFromFile(List<Player*>* playerListToChange, const std::string& filename);
+
 
 };
 

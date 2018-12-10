@@ -376,8 +376,64 @@ void MatchMaker::queuesToString() {
     std::cout << "Challenger Queued Players: " + playerQueues->getValueAt(0)->toString() << std::endl;
 }
 
+Player* MatchMaker::createPlayerFromString(const std::string playerString){
+    std::stringstream splitter (playerString);
+    std::string playerID, rank;
+
+    getline(splitter, playerID, ',');
+    getline(splitter, rank, ',');
+//    getline(splitter, games, ',');
+//    getline(splitter, wins, ',');
+//    getline(splitter, losses, ',');
+//    getline(splitter, ties, ',');
+
+    Player* newPlayer = new Player(playerID);
+    newPlayer->setRank(std::stoi(rank));
+    return newPlayer;
+}
+void MatchMaker::addHardCodedPlayers(List<Player*>* playerListToChange){
+    playerListToChange->insertAtEnd(createPlayerFromString("Dummy_Player, 100"));
+    playerListToChange->insertAtEnd(createPlayerFromString("Dummy_Player1, 200"));
+    playerListToChange->insertAtEnd(createPlayerFromString("Dummy_Player2, 300"));
+    playerListToChange->insertAtEnd(createPlayerFromString("Dummy_Player3, 400"));
+    playerListToChange->insertAtEnd(createPlayerFromString("Dummy_Player4, 500"));
+    playerListToChange->insertAtEnd(createPlayerFromString("Dummy_Player5, 600"));
+}
+
+void MatchMaker::printPlayerListToFile(List<Player*>* pList, std::string filename){
+    std::ofstream outf(filename);
+    if(outf){
+        for(int f=0; f<pList->itemCount(); f++){
+            outf << pList->getValueAt(f)->getID() + ", "  + std::to_string(pList->getValueAt(f)->getRank()) << std::endl;
+        }
+        outf.close();
+    }
+}
+
+void  MatchMaker:: addPlayersFromFile(List<Player*>* playerListToChange, const std::string& filename){
 
 
+    Player* inPlayer;
+    std::ifstream infile(filename);
+
+    if(infile){
+        while(infile){
+            std::string line;
+            getline(infile, line);
+            if(line==""){
+
+            }
+            else if(line!="") {
+                inPlayer = createPlayerFromString(line);
+                playerListToChange->insertAtEnd(inPlayer);
+            }
+        }
+
+    }
+
+    infile.close();
+
+}
 
 
 
