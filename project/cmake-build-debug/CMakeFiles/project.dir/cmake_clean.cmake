@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/project.dir/ArrayLib.cpp.o"
   "CMakeFiles/project.dir/PlayerNode.cpp.o"
   "CMakeFiles/project.dir/PlayerQueue.cpp.o"
+  "CMakeFiles/project.dir/MatchMakerRevised.cpp.o"
   "CMakeFiles/project.dir/MatchMaker.cpp.o"
   "project.pdb"
   "project.exe"

@@ -9,6 +9,7 @@
 #include "PlayerQueue.h"
 #include "PlayerNode.h"
 #include "MatchMaker.h"
+#include "MatchMakerRevised.h"
 
 /**
  * FileIO implementation
@@ -213,7 +214,7 @@ int main() {
     std::cout << " " << std::endl;
     std::cout << " " << std::endl;
 
-    MatchMaker* match=new MatchMaker();
+    MatchMakerRevised* match=new MatchMakerRevised();
 
     std::cout << "Test match is created" << std::endl;
 
@@ -266,7 +267,7 @@ int main() {
     std::cout << match->getQueueList()->getValueAt(5)->getCount() << std::endl;
 
     match->dropQueue("bronze"); //drops the queue and doesnt play remaining games
-    //TODO clear is broken atm
+    //TODO clear is broken atm (STILL BROKEN)
     match->clearQueue("silver"); //clears the queue by playing all the games and accounts for odd numbers of players in queues
 
     match->queuesToString();
@@ -277,11 +278,22 @@ int main() {
 //    match->readPlayersFromFile("matchMaker.csv");
 //
 //    match->outputWholeListWins();
-    match->readPlayersFromFile("test.csv");
 
-    //TODO weird bug with no ranks
+    //TODO weird bug with no ranks (FIXED)
 
-//    match->outputWholeListWins();
+    printPlayerListToFile(match->getPlayerList(),"playerOutput.csv");
+    addPlayersFromFile(match->getPlayerList(),"test.csv");
+
+    match->runMatches(20);
+
+    match->outputWholeListWins();
+
+    Player* player100;
+    player100=match->getPlayer("Player 100");
+    std::cout << player100->getRank() << std::endl;
+
+
+
 
 
 

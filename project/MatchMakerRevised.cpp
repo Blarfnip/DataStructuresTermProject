@@ -2,7 +2,7 @@
 // Created by Milo Rue on 12/1/2018.
 //
 
-#include "MatchMaker.h"
+#include "MatchMakerRevised.h"
 //artificially plays games against next player in list outside of queue
 //void MatchMaker::playMatchesList(List<Player*>* playerList ,int numOfMatches){
 //    for(int k = 0; k < numOfMatches; k++) {
@@ -23,7 +23,7 @@
 //    }
 //}
 
-MatchMaker::MatchMaker() {
+MatchMakerRevised::MatchMakerRevised() {
     playerList = new ArrayList<Player*>(100);
     playerQueues = new ArrayList<PlayerQueue*>(6);
 
@@ -31,7 +31,7 @@ MatchMaker::MatchMaker() {
 
 }
 
-void MatchMaker::playMatchesQueue(int numOfMatches, std::string queueName) {
+void MatchMakerRevised::playMatchesQueue(int numOfMatches, std::string queueName) {
     PlayerQueue* playQueue;
     if(queueName=="Bronze" or "bronze"){
         playQueue=playerQueues->getValueAt(5);
@@ -87,7 +87,7 @@ void MatchMaker::playMatchesQueue(int numOfMatches, std::string queueName) {
     }
 }
 
-void MatchMaker::dropQueue(std::string queueName) {
+void MatchMakerRevised::dropQueue(std::string queueName) {
     PlayerNode* tempPlayer;
     PlayerNode* helpPtr;
     PlayerQueue* playerQueueToDrop;
@@ -129,7 +129,7 @@ void MatchMaker::dropQueue(std::string queueName) {
 }
 
 //TODO not currently working
-void MatchMaker::clearQueue(std::string queueName){
+void MatchMakerRevised::clearQueue(std::string queueName){
     Player* tempPlayer;
     PlayerQueue* playerQueueToClear;
 
@@ -159,15 +159,15 @@ void MatchMaker::clearQueue(std::string queueName){
 
     }
 
-List<Player*>* MatchMaker::getPlayerList() {
+List<Player*>* MatchMakerRevised::getPlayerList() {
     return playerList;
 }
 
-List<PlayerQueue*>* MatchMaker::getQueueList() {
+List<PlayerQueue*>* MatchMakerRevised::getQueueList() {
     return playerQueues;
 }
 
-void MatchMaker::addPlayerFromString(const std::string playerString) {
+void MatchMakerRevised::addPlayerFromString(const std::string playerString) {
     std::stringstream splitter (playerString);
     std::string playerID, rank;
 
@@ -183,7 +183,7 @@ void MatchMaker::addPlayerFromString(const std::string playerString) {
     playerList->insertAtEnd(newPlayer);
 }
 
-void MatchMaker::writePlayerListToFile(std::string filename) {
+void MatchMakerRevised::writePlayerListToFile(std::string filename) {
     std::ofstream outf(filename);
     if(outf){
         for(int f=0; f<playerList->itemCount(); f++){
@@ -193,7 +193,7 @@ void MatchMaker::writePlayerListToFile(std::string filename) {
     }
 }
 
-void MatchMaker::readPlayersFromFile(const std::string &filename) {
+void MatchMakerRevised::readPlayersFromFile(const std::string &filename) {
     Player* inPlayer;
     std::ifstream infile(filename);
 
@@ -216,13 +216,13 @@ void MatchMaker::readPlayersFromFile(const std::string &filename) {
 
 }
 
-void MatchMaker::populatePlayerList(int numOfPlayers) {
+void MatchMakerRevised::populatePlayerList(int numOfPlayers) {
     for(int i = 0; i < numOfPlayers; i++) {
         playerList->insertAtEnd(new Player("Player " + std::to_string(i)));
     }
 }
 
-void MatchMaker::runMatches(int numOfMatches) {
+void MatchMakerRevised::runMatches(int numOfMatches) {
     //Runs x matches with each player
     for(int k = 0; k < numOfMatches; k++) {
         for(int i = 0; i < playerList->itemCount(); i += 2) {
@@ -235,7 +235,7 @@ void MatchMaker::runMatches(int numOfMatches) {
     }
 }
 
-int MatchMaker::getPlayerWins(std::string playerIdIn) {
+int MatchMakerRevised::getPlayerWins(std::string playerIdIn) {
     for(int i=0; i <playerList->itemCount(); i++){
         if(playerList->getValueAt(i)->getID()==playerIdIn){
             return playerList->getValueAt(i)->getWins();
@@ -247,19 +247,19 @@ int MatchMaker::getPlayerWins(std::string playerIdIn) {
     return -1;
 }
 
-void MatchMaker::outputListWins(int numOfPlayers) {
+void MatchMakerRevised::outputListWins(int numOfPlayers) {
     for (int i = 0; i < numOfPlayers; i++) {
         std::cout << playerList->getValueAt(i)->getID() << " | " << playerList->getValueAt(i)->getWins() << std::endl;
     }
 }
 
-void MatchMaker::outputWholeListWins(){
+void MatchMakerRevised::outputWholeListWins(){
     for (int i = 0; i < playerList->itemCount(); i++) {
         std::cout << playerList->getValueAt(i)->getID() << " | " << playerList->getValueAt(i)->getWins() << std::endl;
     }
 }
 
-void MatchMaker::initialQueue() {
+void MatchMakerRevised::initialQueue() {
     PlayerQueue* bronzeQueue= new PlayerQueue();
     PlayerQueue* silverQueue= new PlayerQueue();
     PlayerQueue* goldQueue= new PlayerQueue();
@@ -277,7 +277,7 @@ void MatchMaker::initialQueue() {
 
 }
 
-void MatchMaker::enqueueAllPlayers() {
+void MatchMakerRevised::enqueueAllPlayers() {
 
     Player* tempPlayer;
     int count=playerList->itemCount();
@@ -305,7 +305,7 @@ void MatchMaker::enqueueAllPlayers() {
     tempPlayer= nullptr;
 }
 
-void MatchMaker::enqueueSelection(int numOfPlayers) {
+void MatchMakerRevised::enqueueSelection(int numOfPlayers) {
 
     Player* tempPlayer;
     for(int i = 0; i<numOfPlayers; i++){
@@ -332,7 +332,7 @@ void MatchMaker::enqueueSelection(int numOfPlayers) {
     tempPlayer= nullptr;
 }
 
-void MatchMaker::enqueuePlayer(std::string idIn) {
+void MatchMakerRevised::enqueuePlayer(std::string idIn) {
     Player* tempPlayer;
 
     for(int i=0; i <playerList->itemCount(); i++){
@@ -367,7 +367,7 @@ void MatchMaker::enqueuePlayer(std::string idIn) {
     tempPlayer= nullptr;
 }
 
-void MatchMaker::queuesToString() {
+void MatchMakerRevised::queuesToString() {
     std::cout << "Bronze Queued Players: " + playerQueues->getValueAt(5)->toString() << std::endl;
     std::cout << "Silver Queued Players: " + playerQueues->getValueAt(4)->toString() << std::endl;
     std::cout << "Gold Queued Players: " + playerQueues->getValueAt(3)->toString() << std::endl;
@@ -376,7 +376,7 @@ void MatchMaker::queuesToString() {
     std::cout << "Challenger Queued Players: " + playerQueues->getValueAt(0)->toString() << std::endl;
 }
 
-Player* MatchMaker::getPlayer(std::string idIn) {
+Player* MatchMakerRevised::getPlayer(std::string idIn) {
     Player* tempPlayer;
     for(int f=0; f<playerList->itemCount(); f++){
         if(playerList->getValueAt(f)->getID()==idIn){

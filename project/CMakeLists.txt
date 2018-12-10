@@ -3,4 +3,4 @@ project(project)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(project main.cpp Game.cpp Player.cpp ArrayLib.cpp PlayerNode.cpp PlayerQueue.cpp MatchMaker.cpp MatchMaker.h)
+add_executable(project main.cpp Game.cpp Player.cpp ArrayLib.cpp PlayerNode.cpp PlayerQueue.cpp MatchMakerRevised.cpp MatchMakerRevised.h MatchMaker.cpp MatchMaker.h)

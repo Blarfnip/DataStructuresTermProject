@@ -2,8 +2,8 @@
 // Created by Milo Rue on 12/1/2018.
 //
 
-#ifndef PROJECT_MATCHMAKER_H
-#define PROJECT_MATCHMAKER_H
+#ifndef PROJECT_MATCHMAKERREVISED_H
+#define PROJECT_MATCHMAKERREVISED_H
 #include "Player.h"
 #include "Game.h"
 #include "ArrayList.h"
@@ -15,14 +15,14 @@
 #include <fstream>
 
 
-class MatchMaker {
+class MatchMakerRevised {
 private:
     List<PlayerQueue*>* playerQueues;
     List<Player*>* playerList;
     int playerCount=0;
 public:
 
-    MatchMaker();
+    MatchMakerRevised();
 
     void playMatchesQueue(int numOfMatches, std::string queueName);
 
@@ -68,4 +68,4 @@ public:
 };
 
 
-#endif //PROJECT_MATCHMAKER_H
+#endif //PROJECT_MATCHMAKERREVISED_H
