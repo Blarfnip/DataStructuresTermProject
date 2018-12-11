@@ -110,8 +110,19 @@ int main() {
         //initializes the queues list
         match->initialQueue();
 
-        std::cout << "" << std::endl;
+        std::cout << "========================================================" << std::endl;
+        std::cout << "Its time to create your player, what is your name: " << std::endl;
+        std::cin >> playerName;
 
+        while (match->isInList(playerName) == true) {
+            std::cout << "Name already exists please choose another: " << std::endl;
+            std::cin >> playerName;
+        }
+
+        Player* newPlayer = new Player(playerName);
+        newPlayer->setIsPlayer(true);
+        match->addPlayerToList(newPlayer);
+        //match->addUserIDFromString(playerName);
 
         std::cout << "========================================================" << std::endl;
         while (play == true) {
