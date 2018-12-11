@@ -244,12 +244,24 @@ int main() {
                     std::cin >> qChoice;
                     match->dropQueue(qChoice);
                 } else if(clearChoice==2){
-                    match->dropQueue("Bronze");
-                    match->dropQueue("Silver");
-                    match->dropQueue("Gold");
-                    match->dropQueue("Platinum");
-                    match->dropQueue("Diamond");
-                    match->dropQueue("Challenger");
+                    if(match->getQueueList()->getValueAt(5)->isEmpty()==false){
+                        match->dropQueue("Bronze");
+                    }
+                    if(match->getQueueList()->getValueAt(4)->isEmpty()==false){
+                        match->dropQueue("Silver");
+                    }
+                    if(match->getQueueList()->getValueAt(3)->isEmpty()==false){
+                        match->dropQueue("Gold");
+                    }
+                    if(match->getQueueList()->getValueAt(2)->isEmpty()==false){
+                        match->dropQueue("Platinum");
+                    }
+                    if(match->getQueueList()->getValueAt(1)->isEmpty()==false){
+                        match->dropQueue("Diamond");
+                    }
+                    if(match->getQueueList()->getValueAt(1)->isEmpty()==false){
+                        match->dropQueue("Challenger");
+                    }
                     std::cout << "Cleared all queues" << std::endl;
                 } else{
                     std::cout << "Invalid choice" << std::endl;
