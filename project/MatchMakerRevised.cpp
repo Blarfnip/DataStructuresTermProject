@@ -52,6 +52,7 @@ void MatchMakerRevised::playMatchesQueue(int numOfMatches, std::string queueName
         playQueue=playerQueues->getValueAt(0);
     }
 
+
     int total=playQueue->getCount();
     bool even;
 
@@ -72,15 +73,17 @@ void MatchMakerRevised::playMatchesQueue(int numOfMatches, std::string queueName
             testGame->play();
             delete testGame;
         }
-        playQueue->dequeue();
     }
     else {
-        for (int f = 0; f < numOfMatches; f ++) {
+        for (int f = 0; f < total; f ++) {
             Game *testGame = new Game(playQueue->dequeue()->getPlayer(), playQueue->dequeue()->getPlayer());
             testGame->collectGuesses();
             testGame->play();
             delete testGame;
         }
+    }
+    if(even==false){
+        playQueue->dequeue();
     }
 }
 

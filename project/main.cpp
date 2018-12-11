@@ -94,8 +94,8 @@ int main() {
 
     std::cout << "How would you like to use this piece of software?: " << std::endl;
     std::cout << "========================================================" << std::endl;
-    std::cout << "(1) Example case of Competitive Rock-Paper Scissors" << std::endl;
-    std::cout << "(2) For generic tournament and ranking systems" << std::endl;
+    std::cout << "(1) Debugger UI" << std::endl;
+    std::cout << "(2) Competitive Rock-Paper Scissors" << std::endl;
     std::cout << "========================================================" << std::endl;
     std::cout << "Enter an action: " << std::endl;
     std::cin >> utilityChoice;
@@ -105,11 +105,7 @@ int main() {
         std::cout << "" << std::endl;
         std::cout << "Welcome to the Competitive Rock-Paper-Scissors Simulator" << std::endl;
         std::cout << "========================================================" << std::endl;
-        std::cout << "How many players would you like to play (choose higher number for more variety): " << std::endl;
 
-        //collects initial playerList size from user
-        std::cin >> playerNums;
-        match->populatePlayerList(playerNums);
 
         //initializes the queues list
         match->initialQueue();
@@ -127,6 +123,7 @@ int main() {
         newPlayer->setIsPlayer(true);
         match->addPlayerToList(newPlayer);
         //match->addUserIDFromString(playerName);
+
         std::cout << "========================================================" << std::endl;
         while (play == true) {
             std::cout << "" << std::endl;
@@ -217,7 +214,12 @@ int main() {
                     std::string playerIn;
                     std::cout << "Which player would you like to enqueue?: " << std::endl;
                     std::cin >> playerIn;
-                    match->enqueuePlayer(playerIn);
+                    if(match->isInList(playerIn)){
+                        match->enqueuePlayer(playerIn);
+                    }
+                    else{
+                        std::cout << "Player doesnt exist" << std::endl;
+                    }
                 } else if(enqueueChoice==2){
                     int queueAmt;
                     std::cout << "How many player would you like to enqueue?: " << std::endl;
@@ -268,19 +270,29 @@ int main() {
                 std::string delPlay;
                 std::cout << "Which player would you like to delete?: " << std::endl;
                 std::cin >> delPlay;
-                match->removePlayer(delPlay);
+                if(match->isInList(delPlay)==true){
+                    match->removePlayer(delPlay);
+                }
+                else{
+                    std::cout << "Player doesn't exist in list" << std::endl;
+                }
             } else if(choice == 12){
                 std::string playerStat;
                 std::cout << "Which player would like stats on?: " << std::endl;
                 std::cin >> playerStat;
-                Player* statPlayer = match->getPlayer(playerStat);
-                std::cout << "----------" + statPlayer->getID() + "----------" << std::endl;
-                std::cout << "Rank: " + std::to_string(statPlayer->getRank()) << std::endl;
-                std::cout << "Wins: " + std::to_string(statPlayer->getWins()) << std::endl;
-                std::cout << "Losses: " + std::to_string(statPlayer->getLosses()) << std::endl;
-                std::cout << "Ties: " + std::to_string(statPlayer->getTies()) << std::endl;
-                std::cout << "Games Played: " + std::to_string(statPlayer->getGames()) << std::endl;
-                std::cout << "-------------------------------" << std::endl;
+                if(match->isInList(playerStat)==true) {
+                    Player *statPlayer = match->getPlayer(playerStat);
+                    std::cout << "----------" + statPlayer->getID() + "----------" << std::endl;
+                    std::cout << "Rank: " + std::to_string(statPlayer->getRank()) << std::endl;
+                    std::cout << "Wins: " + std::to_string(statPlayer->getWins()) << std::endl;
+                    std::cout << "Losses: " + std::to_string(statPlayer->getLosses()) << std::endl;
+                    std::cout << "Ties: " + std::to_string(statPlayer->getTies()) << std::endl;
+                    std::cout << "Games Played: " + std::to_string(statPlayer->getGames()) << std::endl;
+                    std::cout << "-------------------------------" << std::endl;
+                }
+                else{
+                    std::cout << "Player isn't in list" << std::endl;
+                }
             } else if(choice == 13){
                 std::cout << "The total amount of players is: " + std::to_string(match->getPlayerList()->itemCount()) << std::endl;
             } else if(choice == 14){
@@ -300,7 +312,12 @@ int main() {
                 std::cin >> p1;
                 std::cout << "Player 2: " << std::endl;
                 std::cin >> p2;
-                match->vsMatch(p1,p2);
+                if(match->isInList(p1) and match->isInList(p2)==true) {
+                    match->vsMatch(p1, p2);
+                }
+                else{
+                    std::cout << "One or more of the players doesn't exist" << std::endl;
+                }
             }
 
             else{
@@ -314,7 +331,11 @@ int main() {
     }
 
     else if(utilityChoice==2){
-        std::cout << "Not implemented yet" << std::endl;
+        std::cout << "-------------------Rock Paper Scissors------------------" <<std::endl;
+        std::cout << "    Enter a number for each of the following commands   " << std::endl;
+        std::cout << "--------------------------------------------------------" << std::endl;
+
+
     }
 
 
