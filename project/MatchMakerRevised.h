@@ -38,6 +38,8 @@ public:
 
     void addUserIDFromString(const std::string playerString);
 
+    void addPlayerToList(Player* newPlayer);
+
     void writePlayerListToFile(std::string filename);
 
     void readPlayersFromFile(const std::string& filename);

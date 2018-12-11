@@ -183,6 +183,10 @@ void MatchMaker::addPlayerFromString(const std::string playerString) {
     playerList->insertAtEnd(newPlayer);
 }
 
+void MatchMaker::addPlayerToList(Player* newPlayer) {
+    playerList->insertAtEnd(newPlayer);
+}
+
 void MatchMaker::writePlayerListToFile(std::string filename) {
     std::ofstream outf(filename);
     if(outf){

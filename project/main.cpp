@@ -123,8 +123,10 @@ int main() {
             std::cin >> playerName;
         }
 
-
-        match->addUserIDFromString(playerName);
+        Player* newPlayer = new Player(playerName);
+        newPlayer->setIsPlayer(true);
+        match->addPlayerToList(newPlayer);
+        //match->addUserIDFromString(playerName);
         std::cout << "========================================================" << std::endl;
         while (play == true) {
             std::cout << "" << std::endl;
