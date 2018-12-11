@@ -152,21 +152,30 @@ int PlayerQueue::getCount() {
 }
 
 std::string PlayerQueue::toLeaderboard() {
-    PlayerNode* helpPtr=front; //helper
-    std::string outStr= ""; //blank string
-    int size=100;
-    List<int>* leaderboard = new ArrayList<int>(size);
-    while(helpPtr!= nullptr){
+    PlayerNode *helpPtr = front; //helper
+    std::string outStr = ""; //blank string
+    int size = 100;
+    List<int> *leaderboard = new ArrayList<int>(size);
+    while (helpPtr != nullptr) {
         leaderboard->insertAtEnd(helpPtr->getPlayer()->getRank());
-        helpPtr=helpPtr->getNext();
+        helpPtr = helpPtr->getNext();
     }
-    helpPtr=front;
+    helpPtr = front;
 
-    List<std::string>* id = new ArrayList<std::string>(size);
-    while(helpPtr!= nullptr){
+    List<std::string> *id = new ArrayList<std::string>(size);
+    while (helpPtr != nullptr) {
         id->insertAtEnd(helpPtr->getPlayer()->getID());
-        helpPtr=helpPtr->getNext();
+        helpPtr = helpPtr->getNext();
     }
+}
+
+void PlayerQueue::clear() {
+    Player* tempPlayer;
+}
+
+PlayerNode* PlayerQueue::getFront() {
+    return front;
+}
 
 
 //    PlayerNode* topPlayer;
@@ -191,7 +200,6 @@ std::string PlayerQueue::toLeaderboard() {
 //
 //    }
 //    return outStr;
-}
 
 //std::string PlayerQueue::toLeaderboard(){
 //    PlayerNode* helpPtr=front;

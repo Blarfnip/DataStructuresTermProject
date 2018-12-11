@@ -33,27 +33,23 @@ MatchMakerRevised::MatchMakerRevised() {
 
 void MatchMakerRevised::playMatchesQueue(int numOfMatches, std::string queueName) {
     PlayerQueue* playQueue;
-    if(queueName=="Bronze" or "bronze"){
+    if(queueName=="Bronze"){
         playQueue=playerQueues->getValueAt(5);
     }
-    else if(queueName=="Silver" or "silver"){
+    if(queueName=="Silver"){
         playQueue=playerQueues->getValueAt(4);
     }
-    else if(queueName=="Gold" or "gold"){
+    if(queueName=="Gold"){
         playQueue=playerQueues->getValueAt(3);
     }
-    else if(queueName=="Platinum" or "platinum"){
+    if(queueName=="Platinum"){
         playQueue=playerQueues->getValueAt(2);
     }
-    else if(queueName=="Diamond" or "diamond"){
+    if(queueName=="Diamond"){
         playQueue=playerQueues->getValueAt(1);
     }
-    else if(queueName=="Challenger" or "challenger"){
+    if(queueName=="Challenger"){
         playQueue=playerQueues->getValueAt(0);
-    }
-
-    else{
-        std::cout << "queue name doesnt exist" << std::endl;
     }
 
     int total=playQueue->getCount();
@@ -68,14 +64,15 @@ void MatchMakerRevised::playMatchesQueue(int numOfMatches, std::string queueName
         total=total/2;
     }
     if( numOfMatches>total){
-        //std::cout << "Entered Match Amount is greater than that of players in " +  queueName + " queue"<< std::endl;
-        //std::cout << "Played " + std::to_string(total) + " instead" << std::endl;
+        std::cout << "Entered Match Amount is greater than that of players in " +  queueName + " queue"<< std::endl;
+        std::cout << "Played " + std::to_string(total) + " instead" << std::endl;
         for (int f = 0; f < total; f++) {
             Game *testGame = new Game(playQueue->dequeue()->getPlayer(), playQueue->dequeue()->getPlayer());
             testGame->collectGuesses();
             testGame->play();
             delete testGame;
         }
+        playQueue->dequeue();
     }
     else {
         for (int f = 0; f < numOfMatches; f ++) {
@@ -92,28 +89,26 @@ void MatchMakerRevised::dropQueue(std::string queueName) {
     PlayerNode* helpPtr;
     PlayerQueue* playerQueueToDrop;
 
-    if(queueName=="Bronze" or "bronze"){
+    if(queueName=="Bronze"){
         playerQueueToDrop=playerQueues->getValueAt(5);
     }
-    else if(queueName=="Silver" or "silver"){
+    if(queueName=="Silver"){
         playerQueueToDrop=playerQueues->getValueAt(4);
     }
-    else if(queueName=="Gold" or "gold"){
+    if(queueName=="Gold"){
         playerQueueToDrop=playerQueues->getValueAt(3);
     }
-    else if(queueName=="Platinum" or "platinum"){
+    if(queueName=="Platinum"){
         playerQueueToDrop=playerQueues->getValueAt(2);
     }
-    else if(queueName=="Diamond" or "diamond"){
+    if(queueName=="Diamond"){
         playerQueueToDrop=playerQueues->getValueAt(1);
     }
-    else if(queueName=="Challenger" or "challenger"){
+    if(queueName=="Challenger"){
         playerQueueToDrop=playerQueues->getValueAt(0);
     }
 
-    else{
-        std::cout << "queue name doesnt exist" << std::endl;
-    }
+    tempPlayer=playerQueueToDrop->getFront();
 
 
     while(tempPlayer->getNext()!= nullptr){
@@ -183,6 +178,11 @@ void MatchMakerRevised::addPlayerFromString(const std::string playerString) {
     playerList->insertAtEnd(newPlayer);
 }
 
+void MatchMakerRevised::addUserIDFromString(const std::string playerString) {
+    Player* newPlayer = new Player(playerString);
+    playerList->insertAtEnd(newPlayer);
+}
+
 void MatchMakerRevised::writePlayerListToFile(std::string filename) {
     std::ofstream outf(filename);
     if(outf){
@@ -218,21 +218,83 @@ void MatchMakerRevised::readPlayersFromFile(const std::string &filename) {
 
 void MatchMakerRevised::populatePlayerList(int numOfPlayers) {
     for(int i = 0; i < numOfPlayers; i++) {
-        playerList->insertAtEnd(new Player("Player " + std::to_string(i)));
+        playerList->insertAtEnd(new Player("Player" + std::to_string(playerCount)));
+        playerCount++;
     }
 }
 
 void MatchMakerRevised::runMatches(int numOfMatches) {
     //Runs x matches with each player
-    for(int k = 0; k < numOfMatches; k++) {
-        for(int i = 0; i < playerList->itemCount(); i += 2) {
-            Game* testGame = new Game(playerList->getValueAt(i), playerList->getValueAt(i + 1));
-            testGame->collectGuesses();
-            //testGame->generateSolution(); *changed game to rock paper scissors format
-            testGame->play();
-            delete testGame;
+
+    for (int k = 0; k < numOfMatches; k++) {
+        if ((playerList->itemCount() % 2) == 0) {
+            for (int i = 0; i < playerList->itemCount(); i += 2) {
+                Game *testGame = new Game(playerList->getValueAt(i), playerList->getValueAt(i + 1));
+
+                testGame->generateSolution();
+                testGame->collectGuesses();
+
+                //testGame->generateSolution(); *changed game to rock paper scissors format
+                testGame->play();
+                delete testGame;
+
+
+//          else {
+//                for (int i = 0; i < playerList->itemCount() - 1; i += 2) {
+//                    if (playerList->itemCount() % 2) {
+//                        Game *testGame = new Game(playerList->getValueAt(i), playerList->getValueAt(i + 1));
+//
+//                        testGame->generateSolution();
+//                        testGame->collectGuesses();
+//
+//                        //testGame->generateSolution(); *changed game to rock paper scissors format
+//                        testGame->play();
+//                        delete testGame;
+//
+//                    }
+//                }
+//            }
+            }
+        } else {
+            for (int i = 0; i < playerList->itemCount() - 1; i += 2) {
+                Game *testGame = new Game(playerList->getValueAt(i), playerList->getValueAt(i + 1));
+
+                testGame->generateSolution();
+                testGame->collectGuesses();
+
+                //testGame->generateSolution(); *changed game to rock paper scissors format
+                testGame->play();
+                delete testGame;
+            }
         }
     }
+}
+
+void MatchMakerRevised::headToHead(std::string player1, std::string player2, std::string winner) {
+    Player* play1;
+    Player* play2;
+    play1=getPlayer(player1);
+    play2=getPlayer(player2);
+    if(winner == player1){
+        play1->won();
+        play2->lost();
+    }
+    else if(winner==player2){
+        play2->won();
+        play1->lost();
+    }
+}
+
+void MatchMakerRevised::vsMatch(std::string player1, std::string player2) {
+    Player* play1;
+    Player* play2;
+    play1=getPlayer(player1);
+    play2=getPlayer(player2);
+    Game* vsGame = new Game(play1,play2);
+    vsGame->generateSolution();
+    vsGame->collectGuesses();
+    vsGame->play();
+    delete vsGame;
 }
 
 int MatchMakerRevised::getPlayerWins(std::string playerIdIn) {
@@ -301,6 +363,9 @@ void MatchMakerRevised::enqueueAllPlayers() {
         else if(tempPlayer->checkTier()=="Challenger"){
             playerQueues->getValueAt(0)->enqueue(tempPlayer);
         }
+        else{
+
+        }
     }
     tempPlayer= nullptr;
 }
@@ -327,6 +392,9 @@ void MatchMakerRevised::enqueueSelection(int numOfPlayers) {
         }
         else if(tempPlayer->checkTier()=="Challenger"){
             playerQueues->getValueAt(0)->enqueue(tempPlayer);
+        }
+        else{
+
         }
     }
     tempPlayer= nullptr;
@@ -389,6 +457,39 @@ Player* MatchMakerRevised::getPlayer(std::string idIn) {
     }
     return tempPlayer;
 }
+
+bool MatchMakerRevised::isInList(std::string idIn) {
+    for(int i=0; i<playerList->itemCount(); i++){
+        if(playerList->getValueAt(i)->getID()==idIn){
+            return true;
+        }
+        else{
+
+        }
+    }
+    return false;
+}
+
+void MatchMakerRevised::removePlayer(std::string idIn) {
+    for(int i=0; i<playerList->itemCount(); i++){
+        if(playerList->getValueAt(i)->getID()==idIn){
+            playerList->removeValueAt(i);
+        }
+        else{
+
+        }
+    }
+}
+
+void MatchMakerRevised::balanceList() {
+    if(playerList->itemCount() % 2 == 0){
+        addUserIDFromString("BPlayer" + std::to_string(playerCount));
+    }
+    else{
+
+    }
+}
+
 
 
 

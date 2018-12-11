@@ -36,6 +36,8 @@ public:
 
     void addPlayerFromString(const std::string playerString);
 
+    void addUserIDFromString(const std::string playerString);
+
     void writePlayerListToFile(std::string filename);
 
     void readPlayersFromFile(const std::string& filename);
@@ -43,6 +45,10 @@ public:
     void populatePlayerList(int numOfPlayers);
 
     void runMatches(int numOfMatches);
+
+    void headToHead(std::string player1, std::string player2, std::string winner);
+
+    void vsMatch(std::string player1, std::string player2);
 
     int getPlayerWins(std::string playerIdIn);
 
@@ -63,6 +69,12 @@ public:
     void queuesToString();
 
     Player* getPlayer(std::string idIn);
+
+    bool isInList(std::string idIn);
+
+    void removePlayer(std::string idIn);
+
+    void balanceList();
 
 
 };

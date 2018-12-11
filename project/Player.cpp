@@ -16,6 +16,10 @@ int Player::getRank() {
 int Player::getWins() {
     return wins;
 }
+
+int Player::getLosses() {
+    return losses;
+}
 int Player::getGames() {
     return games;
 }
@@ -116,7 +120,7 @@ std::string Player::checkTier() {
     if(rank<101){ //checks for bronze
         return tempStr+="Bronze";
     }
-    if(rank>=101 and rank<200){ //checks for silver
+    if(rank>=101 and rank<201){ //checks for silver
         return tempStr+="Silver";
     }
     if(rank>=201 and rank<301){ //checks for gold

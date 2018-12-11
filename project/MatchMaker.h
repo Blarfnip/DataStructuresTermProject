@@ -64,6 +64,8 @@ public:
 
     Player* getPlayer(std::string idIn);
 
+    bool isInList(std::string idIn);
+
 
 
 };

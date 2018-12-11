@@ -87,6 +87,9 @@ public:
     //returns an int of games won
     int getWins();
 
+    //returns an int of games lost
+    int getLosses();
+
     //returns an int of games played
     int getGames();
 

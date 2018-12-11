@@ -45,6 +45,10 @@ public:
 
     int getCount();
 
+    void clear();
+
+    PlayerNode* getFront();
+
 
 
 
