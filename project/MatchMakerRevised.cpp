@@ -53,6 +53,7 @@ void MatchMakerRevised::playMatchesQueue(int numOfMatches, std::string queueName
     }
 
 
+
     int total=playQueue->getCount();
     bool even;
 
@@ -65,8 +66,8 @@ void MatchMakerRevised::playMatchesQueue(int numOfMatches, std::string queueName
         total=total/2;
     }
     if( numOfMatches>total){
-        std::cout << "Entered Match Amount is greater than that of players in " +  queueName + " queue"<< std::endl;
-        std::cout << "Played " + std::to_string(total) + " instead" << std::endl;
+        //std::cout << "Entered Match Amount is greater than that of players in " +  queueName + " queue"<< std::endl;
+        //std::cout << "Played " + std::to_string(total) + " instead" << std::endl;
         for (int f = 0; f < total; f++) {
             Game *testGame = new Game(playQueue->dequeue()->getPlayer(), playQueue->dequeue()->getPlayer());
             testGame->collectGuesses();
