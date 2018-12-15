@@ -160,11 +160,41 @@ int Player::generateGuess() { //creates a random guess between 1-100
         return num;
     } else { //If Player is User
         //TODO: Separate this to another data structure
-        std::cout << "Please give me your guess (1-100): ";
-        std::string guess = "0";
-        std::getline(std::cin, guess);// >> guess;
-        std::cout << std::endl;
-        return std::stoi(guess);
+        bool isValid = false;
+        int num = 0;
+        while(isValid == false) {
+            std::cout << "Please give me your choice for rock papers scissors (1 = rock, 2 = papers, 3 = scissors): " << std::endl;
+            std::string guess = "0";
+            std::cin >> guess;
+            int num = std::stoi(guess);
+            //std::cout << num << std::endl;
+            if(num==1){
+                rocks++;
+                isValid = true;
+                return num;
+            }
+            else if(num==2){
+                papers++;
+                isValid = true;
+                return num;
+            }
+            else if(num==3){
+                scissors++;
+                isValid = true;
+                return num;
+            } else {
+                std::cout << "Please enter a valid choice" << std::endl;
+            }
+
+        }
+
+//        return num;
+//
+//        std::cout << "Please give me your guess (1-100): ";
+//        std::string guess = "0";
+//        std::getline(std::cin, guess);// >> guess;
+//        std::cout << std::endl;
+//        return std::stoi(guess);
     }
 }
 

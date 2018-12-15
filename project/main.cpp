@@ -110,8 +110,19 @@ int main() {
         //initializes the queues list
         match->initialQueue();
 
-        std::cout << "" << std::endl;
+        std::cout << "========================================================" << std::endl;
+        std::cout << "Its time to create your player, what is your name: " << std::endl;
+        std::cin >> playerName;
 
+        while (match->isInList(playerName) == true) {
+            std::cout << "Name already exists please choose another: " << std::endl;
+            std::cin >> playerName;
+        }
+
+        Player* newPlayer = new Player(playerName);
+        newPlayer->setIsPlayer(true);
+        match->addPlayerToList(newPlayer);
+        //match->addUserIDFromString(playerName);
 
         std::cout << "========================================================" << std::endl;
         while (play == true) {
@@ -244,12 +255,24 @@ int main() {
                     std::cin >> qChoice;
                     match->dropQueue(qChoice);
                 } else if(clearChoice==2){
-                    match->dropQueue("Bronze");
-                    match->dropQueue("Silver");
-                    match->dropQueue("Gold");
-                    match->dropQueue("Platinum");
-                    match->dropQueue("Diamond");
-                    match->dropQueue("Challenger");
+                    if(match->getQueueList()->getValueAt(5)->isEmpty()==false){
+                        match->dropQueue("Bronze");
+                    }
+                    if(match->getQueueList()->getValueAt(4)->isEmpty()==false){
+                        match->dropQueue("Silver");
+                    }
+                    if(match->getQueueList()->getValueAt(3)->isEmpty()==false){
+                        match->dropQueue("Gold");
+                    }
+                    if(match->getQueueList()->getValueAt(2)->isEmpty()==false){
+                        match->dropQueue("Platinum");
+                    }
+                    if(match->getQueueList()->getValueAt(1)->isEmpty()==false){
+                        match->dropQueue("Diamond");
+                    }
+                    if(match->getQueueList()->getValueAt(1)->isEmpty()==false){
+                        match->dropQueue("Challenger");
+                    }
                     std::cout << "Cleared all queues" << std::endl;
                 } else{
                     std::cout << "Invalid choice" << std::endl;
@@ -320,9 +343,130 @@ int main() {
     }
 
     else if(utilityChoice==2){
-        std::cout << "-------------------Rock Paper Scissors------------------" <<std::endl;
-        std::cout << "    Enter a number for each of the following commands   " << std::endl;
-        std::cout << "--------------------------------------------------------" << std::endl;
+        int playerNums = 250;
+
+        //Initialize
+
+        std::cout << "" << std::endl;
+        std::cout << "Welcome to the Competitive Rock-Paper-Scissors Simulator" << std::endl;
+
+        //initializes the queues list
+        match->initialQueue();
+
+        std::cout << "========================================================" << std::endl;
+        std::cout << "Its time to create your player, what is your name: " << std::endl;
+        std::cin >> playerName;
+
+        while (match->isInList(playerName) == true) {
+            std::cout << "Name already exists please choose another: " << std::endl;
+            std::cin >> playerName;
+        }
+
+        Player* newPlayer = new Player(playerName);
+        newPlayer->setIsPlayer(true);
+        match->populatePlayerList(playerNums);
+        readPlayersFromFile(match->getPlayerList(),"playerOutput");
+        for(int i = 0; i < 1000; i++) {
+            match->enqueueAllPlayers();
+            match->playMatchesQueue(playerNums, "Bronze");
+            match->playMatchesQueue(playerNums, "Silver");
+            match->playMatchesQueue(playerNums, "Gold");
+            match->playMatchesQueue(playerNums, "Platinum");
+            match->playMatchesQueue(playerNums, "Diamond");
+            match->playMatchesQueue(playerNums, "Challenger");
+
+        }
+
+        match->addPlayerToList(newPlayer);
+        //Stuff
+
+        bool play = true;
+
+        while(play == true) {
+            int choice = 0;
+            std::cout << "-------------------Rock Paper Scissors------------------" <<std::endl;
+            std::cout << "    Enter a number for each of the following commands   " << std::endl;
+            std::cout << "--------------------------------------------------------" << std::endl;
+            std::cout << "(1) Get Player Stats" << std::endl;
+            std::cout << "(2) Get Total Player Count" << std::endl;
+            std::cout << "(3) Get Queued Player Count" << std::endl;
+            std::cout << "(4) Play Match" << std::endl;
+            std::cout << "(5) Print Player Ranks" << std::endl;
+            std::cout << "(7) Quit" << std::endl;
+            std::cout << "--------------------------------------------------------" << std::endl;
+            std::cout << "                     Enter an action:                   " << std::endl;
+            std::cin >> choice;
+            std::cout << "--------------------------------------------------------" << std::endl;
+
+
+            if(choice == 1){
+                std::string playerStat;
+                std::cout << "Which player would like stats on?: " << std::endl;
+                std::cin >> playerStat;
+                if(match->isInList(playerStat)==true) {
+                    Player *statPlayer = match->getPlayer(playerStat);
+                    std::cout << "----------" + statPlayer->getID() + "----------" << std::endl;
+                    std::cout << "Rank: " + std::to_string(statPlayer->getRank()) << std::endl;
+                    std::cout << "Wins: " + std::to_string(statPlayer->getWins()) << std::endl;
+                    std::cout << "Losses: " + std::to_string(statPlayer->getLosses()) << std::endl;
+                    std::cout << "Ties: " + std::to_string(statPlayer->getTies()) << std::endl;
+                    std::cout << "Games Played: " + std::to_string(statPlayer->getGames()) << std::endl;
+                    std::cout << "-------------------------------" << std::endl;
+                }
+                else{
+                    std::cout << "Player isn't in list" << std::endl;
+                }
+            } else if(choice == 2){
+                std::cout << "The total amount of players is: " + std::to_string(match->getPlayerList()->itemCount()) << std::endl;
+            } else if(choice == 3){
+                std::cout << "The counts for queues are: " << std::endl;
+                std::cout << "Bronze: " + std::to_string(match->getQueueList()->getValueAt(5)->getCount()) << std::endl;
+                std::cout << "Silver: " + std::to_string(match->getQueueList()->getValueAt(4)->getCount()) << std::endl;
+                std::cout << "Gold: " + std::to_string(match->getQueueList()->getValueAt(3)->getCount()) << std::endl;
+                std::cout << "Platinum: " + std::to_string(match->getQueueList()->getValueAt(2)->getCount()) << std::endl;
+                std::cout << "Diamond: " + std::to_string(match->getQueueList()->getValueAt(1)->getCount()) << std::endl;
+                std::cout << "Challenger: " + std::to_string(match->getQueueList()->getValueAt(0)->getCount()) << std::endl;
+
+            } else if(choice == 4) {
+                std::cout << "Queueing..." << std::endl;
+                match->enqueueAllPlayers();
+                std::cout << "Queue Found" << std::endl;
+                match->playMatchesQueue(1000000,"Bronze");
+                match->playMatchesQueue(1000000,"Silver");
+                match->playMatchesQueue(1000000,"Gold");
+                match->playMatchesQueue(1000000,"Platinum");
+                match->playMatchesQueue(1000000,"Diamond");
+                match->playMatchesQueue(1000000,"Challenger");
+
+            }
+            else if (choice == 5) {
+                int outChoice=0;
+                std::cout << "Would you like to print the whole list or only a specific number of players?: " << std::endl;
+                std::cout << "(1) Whole list" << std::endl;
+                std::cout << "(2) Specific number" << std::endl;
+                std::cin >> outChoice;
+                if(outChoice==1){
+                    match->outputWholeListWins();
+                } else if(outChoice==2){
+                    int pTotal;
+                    std::cout << "Enter an amount of players: " << std::endl;
+                    std::cin >> pTotal;
+                    while(pTotal>match->getPlayerList()->itemCount()){
+                        std::cout << "Amount is greater than player-base size please enter a new amount: " << std::endl;
+                        std::cin >> pTotal;
+                    }
+                    match->outputListWins(pTotal);
+                } else{
+                    std::cout << "Invalid choice" << std::endl;
+                }
+            }
+            else{
+                std::cout << "Program Ended" << std::endl;
+                play=false;
+            }
+
+
+        }
 
 
     }
