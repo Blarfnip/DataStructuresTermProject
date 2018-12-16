@@ -17,9 +17,6 @@ void Game::collectGuesses() {
 void Game::generateSolution() {
     solution=genRandInt(1,100);
 }
-
-
-
 void Game::play() {
     if(p1Guess==1 and p2Guess==1){ //1 is rock and 2 is rock
         player1->tie();

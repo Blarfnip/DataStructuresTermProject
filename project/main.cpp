@@ -431,15 +431,22 @@ int main() {
                 std::cout << "Challenger: " + std::to_string(match->getQueueList()->getValueAt(0)->getCount()) << std::endl;
 
             } else if(choice == 4) {
-                std::cout << "Queueing..." << std::endl;
-                match->enqueueAllPlayers();
-                std::cout << "Queue Found" << std::endl;
-                match->playMatchesQueue(1000000,"Bronze");
-                match->playMatchesQueue(1000000,"Silver");
-                match->playMatchesQueue(1000000,"Gold");
-                match->playMatchesQueue(1000000,"Platinum");
-                match->playMatchesQueue(1000000,"Diamond");
-                match->playMatchesQueue(1000000,"Challenger");
+                int remainingMatches = 1;
+                std::cout << "How many matches would you like to play?: " << std::endl;
+                std::cin >> remainingMatches;
+                std::cout << "Playing " << remainingMatches << " matches..." << std::endl;
+                for(int i = 0; i < remainingMatches; i++ ) {
+                    std::cout << "Queueing..." << std::endl;
+                    match->enqueueAllPlayers();
+                    std::cout << "Queue Found" << std::endl;
+                    match->playMatchesQueue(1000000,"Bronze");
+                    match->playMatchesQueue(1000000,"Silver");
+                    match->playMatchesQueue(1000000,"Gold");
+                    match->playMatchesQueue(1000000,"Platinum");
+                    match->playMatchesQueue(1000000,"Diamond");
+                    match->playMatchesQueue(1000000,"Challenger");
+                }
+
 
             }
             else if (choice == 5) {
