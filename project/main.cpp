@@ -87,6 +87,7 @@ int main() {
 
     bool play=true;
     int choice;
+    std::string strChoice;
     int utilityChoice=0;
     int playerNums=0;
     int playerNumsIn=0;
@@ -148,8 +149,10 @@ int main() {
             std::cout << "(17) Exit" << std::endl;
             std::cout << "--------------------------------------------------------" << std::endl;
             std::cout << "                     Enter an action:                   " << std::endl;
-            std::cin >> choice;
+            std::cin >> strChoice;
             std::cout << "--------------------------------------------------------" << std::endl;
+
+            choice=std::stoi(strChoice);
 
             if (choice == 1) {
                 std::cout << "What is the id of your new player?: " << std::endl;

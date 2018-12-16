@@ -42,7 +42,7 @@ runs a match between player1 and player2
 
 int MatchMakerRevised::getPlayerWins(std::string playerIdIn)
 
-returns the number of player wins
+2returns the number of player wins
 
 void outputListWins(int numOfPlayers);
 
