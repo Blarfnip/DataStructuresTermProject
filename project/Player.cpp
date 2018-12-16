@@ -167,7 +167,7 @@ int Player::generateGuess() { //creates a random guess between 1-100
             std::string guess = "0";
             std::cin >> guess;
             int num = std::stoi(guess);
-            std::cout << num << std::endl;
+            //std::cout << num << std::endl;
             if(num==1){
                 rocks++;
                 isValid = true;
@@ -183,12 +183,12 @@ int Player::generateGuess() { //creates a random guess between 1-100
                 isValid = true;
                 return num;
             } else {
-                std::cout << "Please enter a valid choice";
+                std::cout << "Please enter a valid choice" << std::endl;
             }
 
         }
 
-        return num;
+//        return num;
 //
 //        std::cout << "Please give me your guess (1-100): ";
 //        std::string guess = "0";

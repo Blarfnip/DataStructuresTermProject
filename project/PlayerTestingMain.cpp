@@ -37,6 +37,14 @@ int main() {
     std::cout << "Games Played: " + std::to_string(statPlayer->getGames()) << std::endl;
     std::cout << "-------------------------------" << std::endl;
 
+    //Initialize
+    //Play a few hundred matches
+    //Create player character
+    //Check stats
+    //Enqueue
+    //Check leaderboard
+
+
     //match->enqueueAllPlayers();
 
 }
