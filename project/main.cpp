@@ -110,18 +110,18 @@ int main() {
         //initializes the queues list
         match->initialQueue();
 
-        std::cout << "========================================================" << std::endl;
-        std::cout << "Its time to create your player, what is your name: " << std::endl;
-        std::cin >> playerName;
+//        std::cout << "========================================================" << std::endl;
+//        std::cout << "Its time to create your player, what is your name: " << std::endl;
+//        std::cin >> playerName;
+//
+//        while (match->isInList(playerName) == true) {
+//            std::cout << "Name already exists please choose another: " << std::endl;
+//            std::cin >> playerName;
+//        }
 
-        while (match->isInList(playerName) == true) {
-            std::cout << "Name already exists please choose another: " << std::endl;
-            std::cin >> playerName;
-        }
-
-        Player* newPlayer = new Player(playerName);
-        newPlayer->setIsPlayer(true);
-        match->addPlayerToList(newPlayer);
+//        Player* newPlayer = new Player(playerName);
+//        newPlayer->setIsPlayer(true);
+//        match->addPlayerToList(newPlayer);
         //match->addUserIDFromString(playerName);
 
         std::cout << "========================================================" << std::endl;
@@ -145,7 +145,7 @@ int main() {
             std::cout << "(13) Get player-base counts" << std::endl;
             std::cout << "(14) Get player counts for queues" << std::endl;
             std::cout << "(15) Play specific player" << std::endl;
-            std::cout << "(16) Exit" << std::endl;
+            std::cout << "(17) Exit" << std::endl;
             std::cout << "--------------------------------------------------------" << std::endl;
             std::cout << "                     Enter an action:                   " << std::endl;
             std::cin >> choice;
