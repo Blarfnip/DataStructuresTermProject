@@ -83,7 +83,7 @@ int main() {
 
     MatchMakerRevised *system = new MatchMakerRevised();
 
-    MatchMakerRevised *ranmatch = new MatchMakerRevised();
+    MatchMakerRevised *match = new MatchMakerRevised();
 
     bool play = true;
     int choice;
@@ -110,7 +110,7 @@ int main() {
 
 
         //initializes the queues list
-        ranmatch->initialQueue();
+        match->initialQueue();
 
 //        std::cout << "========================================================" << std::endl;
 //        std::cout << "Its time to create your player, what is your name: " << std::endl;
@@ -158,35 +158,35 @@ int main() {
             if (choice == 1) {
                 std::cout << "What is the id of your new player?: " << std::endl;
                 std::cin >> playerName;
-                while (ranmatch->isInList(playerName) == true) {
+                while (match->isInList(playerName) == true) {
                     std::cout << "Name already exists please choose another: " << std::endl;
                     std::cin >> playerName;
                 }
 
-                ranmatch->addUserIDFromString(playerName);
+                match->addUserIDFromString(playerName);
 
             } else if (choice == 2) {
                 std::cout << "How many players would you like to add?: " << std::endl;
                 std::cin >> playerNums;
-                ranmatch->populatePlayerList(playerNums);
+                match->populatePlayerList(playerNums);
                 std::cout << "Added " + std::to_string(playerNums) + " players to the database" << std::endl;
             } else if (choice == 3) {
                 int gameCount;
                 std::cout << "How many matches would you like to run?: " << std::endl;
                 std::cin >> gameCount;
-                ranmatch->runMatches(gameCount);
+                match->runMatches(gameCount);
             } else if (choice == 4) {
                 std::string filename;
                 std::cout << "What file would you like to read a player-base from?: (make sure its a .csv)"
                           << std::endl;
                 std::cin >> filename;
-                readPlayersFromFile(ranmatch->getPlayerList(), filename);
+                readPlayersFromFile(match->getPlayerList(), filename);
                 std::cout << "Read file into database from: " + filename << std::endl;
             } else if (choice == 5) {
                 std::string filename;
                 std::cout << "What file would you like to create?: (make sure its a .csv)" << std::endl;
                 std::cin >> filename;
-                writePlayersToFile(ranmatch->getPlayerList(), filename);
+                writePlayersToFile(match->getPlayerList(), filename);
                 std::cout << "Wrote database into filename: " + filename << std::endl;
             } else if (choice == 6) {
                 int outChoice = 0;
@@ -196,16 +196,16 @@ int main() {
                 std::cout << "(2) Specific number" << std::endl;
                 std::cin >> outChoice;
                 if (outChoice == 1) {
-                    ranmatch->outputWholeListWins();
+                    match->outputWholeListWins();
                 } else if (outChoice == 2) {
                     int pTotal;
                     std::cout << "Enter an amount of players: " << std::endl;
                     std::cin >> pTotal;
-                    while (pTotal > ranmatch->getPlayerList()->itemCount()) {
+                    while (pTotal > match->getPlayerList()->itemCount()) {
                         std::cout << "Amount is greater than player-base size please enter a new amount: " << std::endl;
                         std::cin >> pTotal;
                     }
-                    ranmatch->outputListWins(pTotal);
+                    match->outputListWins(pTotal);
                 } else {
                     std::cout << "Invalid choice" << std::endl;
                 }
@@ -220,8 +220,8 @@ int main() {
                     std::string playerIn;
                     std::cout << "Which player would you like to enqueue?: " << std::endl;
                     std::cin >> playerIn;
-                    if (ranmatch->isInList(playerIn)) {
-                        ranmatch->enqueuePlayer(playerIn);
+                    if (match->isInList(playerIn)) {
+                        match->enqueuePlayer(playerIn);
                     } else {
                         std::cout << "Player doesnt exist" << std::endl;
                     }
@@ -229,11 +229,11 @@ int main() {
                     int queueAmt;
                     std::cout << "How many player would you like to enqueue?: " << std::endl;
                     std::cin >> queueAmt;
-                    ranmatch->enqueueSelection(queueAmt);
+                    match->enqueueSelection(queueAmt);
                 } else if (enqueueChoice == 3) {
-                    ranmatch->enqueueAllPlayers();
-                    std::cout << std::to_string(ranmatch->getPlayerList()->itemCount()) << std::endl;
-                    std::cout << "Enqueued all: " + std::to_string(ranmatch->getPlayerList()->itemCount()) + " players"
+                    match->enqueueAllPlayers();
+                    std::cout << std::to_string(match->getPlayerList()->itemCount()) << std::endl;
+                    std::cout << "Enqueued all: " + std::to_string(match->getPlayerList()->itemCount()) + " players"
                               << std::endl;
                 } else {
                     std::cout << "Invalid choice" << std::endl;
@@ -245,9 +245,9 @@ int main() {
                 std::cin >> numMatches;
                 std::cout << "On which queue?: " << std::endl;
                 std::cin >> queueType;
-                ranmatch->playMatchesQueue(numMatches, queueType);
+                match->playMatchesQueue(numMatches, queueType);
             } else if (choice == 9) {
-                ranmatch->queuesToString();
+                match->queuesToString();
             } else if (choice == 10) {
                 int clearChoice;
                 std::cout << "Which would you like to clear?: " << std::endl;
@@ -259,25 +259,25 @@ int main() {
                     std::string qChoice;
                     std::cout << "Which queue?: " << std::endl;
                     std::cin >> qChoice;
-                    ranmatch->dropQueue(qChoice);
+                    match->dropQueue(qChoice);
                 } else if (clearChoice == 2) {
-                    if (ranmatch->getQueueList()->getValueAt(5)->isEmpty() == false) {
-                        ranmatch->dropQueue("Bronze");
+                    if (match->getQueueList()->getValueAt(5)->isEmpty() == false) {
+                        match->dropQueue("Bronze");
                     }
-                    if (ranmatch->getQueueList()->getValueAt(4)->isEmpty() == false) {
-                        ranmatch->dropQueue("Silver");
+                    if (match->getQueueList()->getValueAt(4)->isEmpty() == false) {
+                        match->dropQueue("Silver");
                     }
-                    if (ranmatch->getQueueList()->getValueAt(3)->isEmpty() == false) {
-                        ranmatch->dropQueue("Gold");
+                    if (match->getQueueList()->getValueAt(3)->isEmpty() == false) {
+                        match->dropQueue("Gold");
                     }
-                    if (ranmatch->getQueueList()->getValueAt(2)->isEmpty() == false) {
-                        ranmatch->dropQueue("Platinum");
+                    if (match->getQueueList()->getValueAt(2)->isEmpty() == false) {
+                        match->dropQueue("Platinum");
                     }
-                    if (ranmatch->getQueueList()->getValueAt(1)->isEmpty() == false) {
-                        ranmatch->dropQueue("Diamond");
+                    if (match->getQueueList()->getValueAt(1)->isEmpty() == false) {
+                        match->dropQueue("Diamond");
                     }
-                    if (ranmatch->getQueueList()->getValueAt(0)->isEmpty() == false) {
-                        ranmatch->dropQueue("Challenger");
+                    if (match->getQueueList()->getValueAt(0)->isEmpty() == false) {
+                        match->dropQueue("Challenger");
                     }
                     std::cout << "Cleared all queues" << std::endl;
                 } else {
@@ -288,8 +288,8 @@ int main() {
                 std::string delPlay;
                 std::cout << "Which player would you like to delete?: " << std::endl;
                 std::cin >> delPlay;
-                if (ranmatch->isInList(delPlay) == true) {
-                    ranmatch->removePlayer(delPlay);
+                if (match->isInList(delPlay) == true) {
+                    match->removePlayer(delPlay);
                 } else {
                     std::cout << "Player doesn't exist in list" << std::endl;
                 }
@@ -297,8 +297,8 @@ int main() {
                 std::string playerStat;
                 std::cout << "Which player would like stats on?: " << std::endl;
                 std::cin >> playerStat;
-                if (ranmatch->isInList(playerStat) == true) {
-                    Player *statPlayer = ranmatch->getPlayer(playerStat);
+                if (match->isInList(playerStat) == true) {
+                    Player *statPlayer = match->getPlayer(playerStat);
                     std::cout << "----------" + statPlayer->getID() + "----------" << std::endl;
                     std::cout << "Rank: " + std::to_string(statPlayer->getRank()) << std::endl;
                     std::cout << "Wins: " + std::to_string(statPlayer->getWins()) << std::endl;
@@ -310,18 +310,18 @@ int main() {
                     std::cout << "Player isn't in list" << std::endl;
                 }
             } else if (choice == 13) {
-                std::cout << "The total amount of players is: " + std::to_string(ranmatch->getPlayerList()->itemCount())
+                std::cout << "The total amount of players is: " + std::to_string(match->getPlayerList()->itemCount())
                           << std::endl;
             } else if (choice == 14) {
                 std::cout << "The counts for queues are: " << std::endl;
-                std::cout << "Bronze: " + std::to_string(ranmatch->getQueueList()->getValueAt(5)->getCount()) << std::endl;
-                std::cout << "Silver: " + std::to_string(ranmatch->getQueueList()->getValueAt(4)->getCount()) << std::endl;
-                std::cout << "Gold: " + std::to_string(ranmatch->getQueueList()->getValueAt(3)->getCount()) << std::endl;
-                std::cout << "Platinum: " + std::to_string(ranmatch->getQueueList()->getValueAt(2)->getCount())
+                std::cout << "Bronze: " + std::to_string(match->getQueueList()->getValueAt(5)->getCount()) << std::endl;
+                std::cout << "Silver: " + std::to_string(match->getQueueList()->getValueAt(4)->getCount()) << std::endl;
+                std::cout << "Gold: " + std::to_string(match->getQueueList()->getValueAt(3)->getCount()) << std::endl;
+                std::cout << "Platinum: " + std::to_string(match->getQueueList()->getValueAt(2)->getCount())
                           << std::endl;
-                std::cout << "Diamond: " + std::to_string(ranmatch->getQueueList()->getValueAt(1)->getCount())
+                std::cout << "Diamond: " + std::to_string(match->getQueueList()->getValueAt(1)->getCount())
                           << std::endl;
-                std::cout << "Challenger: " + std::to_string(ranmatch->getQueueList()->getValueAt(0)->getCount())
+                std::cout << "Challenger: " + std::to_string(match->getQueueList()->getValueAt(0)->getCount())
                           << std::endl;
 
             } else if (choice == 15) {
@@ -332,8 +332,8 @@ int main() {
                 std::cin >> p1;
                 std::cout << "Player 2: " << std::endl;
                 std::cin >> p2;
-                if (ranmatch->isInList(p1) and ranmatch->isInList(p2) == true) {
-                    ranmatch->vsMatch(p1, p2);
+                if (match->isInList(p1) and match->isInList(p2) == true) {
+                    match->vsMatch(p1, p2);
                 } else {
                     std::cout << "One or more of the players doesn't exist" << std::endl;
                 }
@@ -353,56 +353,57 @@ int main() {
         std::cout << "Welcome to the Competitive Rock-Paper-Scissors Simulator" << std::endl;
 
         //initializes the queues list
-        MatchMakerRevised *ranMatch= new MatchMakerRevised();
-        ranmatch->initialQueue();
+        MatchMakerRevised *playmatch= new MatchMakerRevised();
+        playmatch->initialQueue();
 
         std::cout << "========================================================" << std::endl;
         std::cout << "Its time to create your player, what is your name: " << std::endl;
         std::cin >> playerName;
 
-        while (ranmatch->isInList(playerName) == true) {
+        while (playmatch->isInList(playerName) == true) {
             std::cout << "Name already exists please choose another: " << std::endl;
             std::cin >> playerName;
         }
 
         Player *newPlayer = new Player(playerName);
         newPlayer->setIsPlayer(true);
-        ranmatch->populatePlayerList(playerNums);
-        readPlayersFromFile(ranmatch->getPlayerList(), "playerOutput");
+        playmatch->populatePlayerList(playerNums);
+        readPlayersFromFile(playmatch->getPlayerList(), "playerOutput");
         for (int i = 0; i < 1000; i++) {
-            ranmatch->enqueueAllPlayers();
-            ranmatch->playMatchesQueue(playerNums, "Bronze");
-            ranmatch->playMatchesQueue(playerNums, "Silver");
-            ranmatch->playMatchesQueue(playerNums, "Gold");
-            ranmatch->playMatchesQueue(playerNums, "Platinum");
-            ranmatch->playMatchesQueue(playerNums, "Diamond");
-            ranmatch->playMatchesQueue(playerNums, "Challenger");
+            playmatch->enqueueAllPlayers();
+            playmatch->playMatchesQueue(playerNums, "Bronze");
+            playmatch->playMatchesQueue(playerNums, "Silver");
+            playmatch->playMatchesQueue(playerNums, "Gold");
+            playmatch->playMatchesQueue(playerNums, "Platinum");
+            playmatch->playMatchesQueue(playerNums, "Diamond");
+            playmatch->playMatchesQueue(playerNums, "Challenger");
 
         }
 
-        ranmatch->addPlayerToList(newPlayer);
-        if (ranmatch->getQueueList()->getValueAt(5)->isEmpty() == false) {
-            ranmatch->dropQueue("Bronze");
+        playmatch->addPlayerToList(newPlayer);
+        if (playmatch->getQueueList()->getValueAt(5)->isEmpty() == false) {
+            playmatch->dropQueue("Bronze");
         }
-        if (ranmatch->getQueueList()->getValueAt(4)->isEmpty() == false) {
-            ranmatch->dropQueue("Silver");
+        if (playmatch->getQueueList()->getValueAt(4)->isEmpty() == false) {
+            playmatch->dropQueue("Silver");
         }
-        if (ranmatch->getQueueList()->getValueAt(3)->isEmpty() == false) {
-            ranmatch->dropQueue("Gold");
+        if (playmatch->getQueueList()->getValueAt(3)->isEmpty() == false) {
+            playmatch->dropQueue("Gold");
         }
-        if (ranmatch->getQueueList()->getValueAt(2)->isEmpty() == false) {
-            ranmatch->dropQueue("Platinum");
+        if (playmatch->getQueueList()->getValueAt(2)->isEmpty() == false) {
+            playmatch->dropQueue("Platinum");
         }
-        if (ranmatch->getQueueList()->getValueAt(1)->isEmpty() == false) {
-            ranmatch->dropQueue("Diamond");
+        if (playmatch->getQueueList()->getValueAt(1)->isEmpty() == false) {
+            playmatch->dropQueue("Diamond");
         }
-        if (ranmatch->getQueueList()->getValueAt(0)->isEmpty() == false) {
-            ranmatch->dropQueue("Challenger");
+        if (playmatch->getQueueList()->getValueAt(0)->isEmpty() == false) {
+            playmatch->dropQueue("Challenger");
         }
 
         //Stuff
 
         bool play = true;
+        playmatch->enqueueSelection(playmatch->getPlayerList()->itemCount()-1);
 
         while (play == true) {
             int choice = 0;
@@ -425,8 +426,8 @@ int main() {
                 std::string playerStat;
                 std::cout << "Which player would like stats on?: " << std::endl;
                 std::cin >> playerStat;
-                if (ranmatch->isInList(playerStat) == true) {
-                    Player *statPlayer = ranmatch->getPlayer(playerStat);
+                if (playmatch->isInList(playerStat) == true) {
+                    Player *statPlayer = playmatch->getPlayer(playerStat);
                     std::cout << "----------" + statPlayer->getID() + "----------" << std::endl;
                     std::cout << "Rank: " + std::to_string(statPlayer->getRank()) << std::endl;
                     std::cout << "Wins: " + std::to_string(statPlayer->getWins()) << std::endl;
@@ -438,18 +439,18 @@ int main() {
                     std::cout << "Player isn't in list" << std::endl;
                 }
             } else if (choice == 2) {
-                std::cout << "The total amount of players is: " + std::to_string(ranmatch->getPlayerList()->itemCount())
+                std::cout << "The total amount of players is: " + std::to_string(playmatch->getPlayerList()->itemCount())
                           << std::endl;
             } else if (choice == 3) {
                 std::cout << "The counts for queues are: " << std::endl;
-                std::cout << "Bronze: " + std::to_string(ranmatch->getQueueList()->getValueAt(5)->getCount()) << std::endl;
-                std::cout << "Silver: " + std::to_string(ranmatch->getQueueList()->getValueAt(4)->getCount()) << std::endl;
-                std::cout << "Gold: " + std::to_string(ranmatch->getQueueList()->getValueAt(3)->getCount()) << std::endl;
-                std::cout << "Platinum: " + std::to_string(ranmatch->getQueueList()->getValueAt(2)->getCount())
+                std::cout << "Bronze: " + std::to_string(playmatch->getQueueList()->getValueAt(5)->getCount()) << std::endl;
+                std::cout << "Silver: " + std::to_string(playmatch->getQueueList()->getValueAt(4)->getCount()) << std::endl;
+                std::cout << "Gold: " + std::to_string(playmatch->getQueueList()->getValueAt(3)->getCount()) << std::endl;
+                std::cout << "Platinum: " + std::to_string(playmatch->getQueueList()->getValueAt(2)->getCount())
                           << std::endl;
-                std::cout << "Diamond: " + std::to_string(ranmatch->getQueueList()->getValueAt(1)->getCount())
+                std::cout << "Diamond: " + std::to_string(playmatch->getQueueList()->getValueAt(1)->getCount())
                           << std::endl;
-                std::cout << "Challenger: " + std::to_string(ranmatch->getQueueList()->getValueAt(0)->getCount())
+                std::cout << "Challenger: " + std::to_string(playmatch->getQueueList()->getValueAt(0)->getCount())
                           << std::endl;
 
             } else if (choice == 4) {
@@ -457,17 +458,19 @@ int main() {
                 std::cout << "How many matches would you like to play?: " << std::endl;
                 std::cin >> remainingMatches;
                 std::cout << "Playing " << remainingMatches << " matches..." << std::endl;
+                playmatch->enqueueSelection(playmatch->getPlayerList()->itemCount()-1);
                 for (int i = 0; i < remainingMatches; i++) {
-                    std::cout << "Queueing..." << std::endl;
-                    ranmatch->enqueueAllPlayers();
-                    std::cout << "Queue Found" << std::endl;
-                    ranmatch->playMatchesQueue(1000000, "Bronze");
-                    ranmatch->playMatchesQueue(1000000, "Silver");
-                    ranmatch->playMatchesQueue(1000000, "Gold");
-                    ranmatch->playMatchesQueue(1000000, "Platinum");
-                    ranmatch->playMatchesQueue(1000000, "Diamond");
-                    ranmatch->playMatchesQueue(1000000, "Challenger");
+                    playmatch->enqueuePlayer(playerName);
+                    playmatch->enqueueSelection(playmatch->getPlayerList()->itemCount()-1);
+                    playmatch->playMatchesQueue(1000000,"Bronze");
+                    playmatch->playMatchesQueue(1000000,"Silver");
+                    playmatch->playMatchesQueue(1000000,"Gold");
+                    playmatch->playMatchesQueue(1000000,"Platinum");
+                    playmatch->playMatchesQueue(1000000,"Diamond");
+                    playmatch->playMatchesQueue(1000000,"Challenger");
+
                 }
+                playmatch->enqueueSelection(playmatch->getPlayerList()->itemCount()-1);
 
 
             } else if (choice == 5) {
@@ -478,16 +481,16 @@ int main() {
                 std::cout << "(2) Specific number" << std::endl;
                 std::cin >> outChoice;
                 if (outChoice == 1) {
-                    ranmatch->outputWholeListWins();
+                    playmatch->outputWholeListWins();
                 } else if (outChoice == 2) {
                     int pTotal;
                     std::cout << "Enter an amount of players: " << std::endl;
                     std::cin >> pTotal;
-                    while (pTotal > ranmatch->getPlayerList()->itemCount()) {
+                    while (pTotal > playmatch->getPlayerList()->itemCount()) {
                         std::cout << "Amount is greater than player-base size please enter a new amount: " << std::endl;
                         std::cin >> pTotal;
                     }
-                    ranmatch->outputListWins(pTotal);
+                    playmatch->outputListWins(pTotal);
                 } else {
                     std::cout << "Invalid choice" << std::endl;
                 }

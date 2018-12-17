@@ -23,54 +23,108 @@ void Game::play() {
         player1->tie();
         player2->tie();
         winner="No Winner (TIE)";
+        if(player1->getIsPlayer()==true){
+            std::cout << "You tied" << std::endl;
+        }
+        if(player2->getIsPlayer()==true){
+            std::cout << "You tied" << std::endl;
+        }
     }
 
     else if(p1Guess==1 and p2Guess==2){ //1 is rock and 2 is paper
         player2->won();
         player1->lost();
         winner="Player 2";
+        if(player2->getIsPlayer()==true){
+            std::cout << "You win" << std::endl;
+        }
+        if(player1->getIsPlayer()==true) {
+            std::cout << "You lost" << std::endl;
+        }
     }
 
     else if(p1Guess==1 and p2Guess==3){ //1 is rock and 3 is scissors
         player1->won();
         player2->lost();
         winner="Player 1";
+        if(player1->getIsPlayer()==true){
+            std::cout << "You win" << std::endl;
+        }
+        if(player2->getIsPlayer()==true){
+            std::cout << "You lost" << std::endl;
+        }
     }
 
     else if(p1Guess==2 and p2Guess==1){//1 is paper and 2 is rock
         player1->won();
         player2->lost();
         winner="Player 1";
+        if(player1->getIsPlayer()==true){
+            std::cout << "You win" << std::endl;
+        }
+        if(player2->getIsPlayer()==true){
+            std::cout << "You lost" << std::endl;
+        }
     }
 
     else if(p1Guess==2 and p2Guess==2){//1 is paper and 2 is paper
         player1->tie();
         player2->tie();
         winner="No Winner (TIE)";
+        if(player1->getIsPlayer()==true){
+            std::cout << "You tied" << std::endl;
+        }
+        if(player2->getIsPlayer()==true){
+            std::cout << "You tied" << std::endl;
+        }
     }
 
     else if(p1Guess==2 and p2Guess==3){//1 is paper and 2 is scissors
         player2->won();
         player1->lost();
         winner="Player 2";
+        if(player2->getIsPlayer()==true){
+            std::cout << "You win" << std::endl;
+        }
+        if(player1->getIsPlayer()==true){
+            std::cout << "You lost" << std::endl;
+        }
     }
 
     else if(p1Guess==3 and p2Guess==1){//1 is scissors and 2 is rock
         player2->won();
         player1->lost();
         winner="Player 2";
+        if(player2->getIsPlayer()==true){
+            std::cout << "You win" << std::endl;
+        }
+        if(player1->getIsPlayer()==true){
+            std::cout << "You lost" << std::endl;
+        }
     }
 
     else if(p1Guess==3 and p2Guess==2){//1 is scissors and 2 is paper
         player1->won();
         player2->lost();
         winner="Player 1";
+        if(player1->getIsPlayer()==true){
+            std::cout << "You win" << std::endl;
+        }
+        if(player2->getIsPlayer()==true){
+            std::cout << "You lost" << std::endl;
+        }
     }
 
     else if(p1Guess==3 and p2Guess==3){//1 is scissors and 2 is scissors
         player1->tie();
         player2->tie();
         winner="No Winner (TIE)";
+        if(player1->getIsPlayer()==true){
+            std::cout << "You tied" << std::endl;
+        }
+        if(player2->getIsPlayer()==true){
+            std::cout << "You tied" << std::endl;
+        }
     }
 
 //    int difference1;

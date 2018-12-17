@@ -173,12 +173,12 @@ int Player::generateGuess() { //creates a random guess between 1-100
                 isValid = true;
                 return num;
             }
-            else if(num==2){
+            if(num==2){
                 papers++;
                 isValid = true;
                 return num;
             }
-            else if(num==3){
+            if(num==3){
                 scissors++;
                 isValid = true;
                 return num;
@@ -214,6 +214,9 @@ void Player::setPlace(int gamesIn, int winsIn, int lossesIn, int tiesIn) {
     ties+=tiesIn;
 }
 
+bool Player::getIsPlayer() {
+    return isPlayer;
+}
 //TODO: Possibility of setPlace for creating artificial players that runs games based
 //TODO: on what you put to create more accurate ranking stats, wouldn't allow for rank input though
 

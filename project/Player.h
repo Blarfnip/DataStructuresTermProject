@@ -123,6 +123,8 @@ public:
     //a way to edit games,wins,and losses for file input of randomized players
     void setPlace(int gamesIn, int winsIn, int lossesIn, int tiesIn);
 
+    bool getIsPlayer();
+
 };
 
 
