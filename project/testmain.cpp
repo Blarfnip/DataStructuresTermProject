@@ -80,7 +80,11 @@ void addPlayersFromFile(List<Player*>* playerListToChange, const std::string& fi
 int testmain() {
     srand(time(NULL)); //Seeds random numbers
 
-    //TODO Tested Main:
+    //Tests:
+
+
+
+
 
 
 

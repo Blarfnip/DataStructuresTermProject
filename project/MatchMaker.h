@@ -20,6 +20,7 @@ private:
     List<PlayerQueue*>* playerQueues;
     List<Player*>* playerList;
     int playerCount=0;
+    List<Game*>* bracket;
 public:
 
     MatchMaker();
@@ -33,6 +34,8 @@ public:
     List<Player*>* getPlayerList();
 
     List<PlayerQueue*>* getQueueList();
+
+    List<Game*>* getBracket();
 
     void addPlayerFromString(const std::string playerString);
 
@@ -67,6 +70,8 @@ public:
     Player* getPlayer(std::string idIn);
 
     bool isInList(std::string idIn);
+
+    void createBracket(int numOfPlayers);
 
 
 

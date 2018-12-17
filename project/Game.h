@@ -20,6 +20,7 @@ private:
     int p2Guess; //Player 2 Guess
     Player* player1; //Player 1 pointer
     Player* player2; //Player 2 pointer
+    std::string winner;
 
 public:
     Game(Player* player1, Player* player2);
@@ -27,6 +28,7 @@ public:
 
     void generateSolution(); //Generates game solution
     void play(); //Evaluates guesses and solution to determine wins
+    std::string getWinner(); //gets a string representation of the winner
 };
 
 #endif //TERM_PROJECT_220_GAME_H

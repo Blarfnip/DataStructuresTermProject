@@ -32,59 +32,63 @@ MatchMakerRevised::MatchMakerRevised() {
 }
 
 void MatchMakerRevised::playMatchesQueue(int numOfMatches, std::string queueName) {
-    PlayerQueue* playQueue;
-    if(queueName=="Bronze"){
-        playQueue=playerQueues->getValueAt(5);
-    }
-    if(queueName=="Silver"){
-        playQueue=playerQueues->getValueAt(4);
-    }
-    if(queueName=="Gold"){
-        playQueue=playerQueues->getValueAt(3);
-    }
-    if(queueName=="Platinum"){
-        playQueue=playerQueues->getValueAt(2);
-    }
-    if(queueName=="Diamond"){
-        playQueue=playerQueues->getValueAt(1);
-    }
-    if(queueName=="Challenger"){
-        playQueue=playerQueues->getValueAt(0);
-    }
-
-
-
-    int total=playQueue->getCount();
-    bool even;
-
-    if(total % 2 == 0){
-        even=true;
-        total=total/2;
-    }
-    else{
-        even=false;
-        total=total/2;
-    }
-    if( numOfMatches>total){
-        //std::cout << "Entered Match Amount is greater than that of players in " +  queueName + " queue"<< std::endl;
-        //std::cout << "Played " + std::to_string(total) + " instead" << std::endl;
-        for (int f = 0; f < total; f++) {
-            Game *testGame = new Game(playQueue->dequeue()->getPlayer(), playQueue->dequeue()->getPlayer());
-            testGame->collectGuesses();
-            testGame->play();
-            delete testGame;
-        }
+    if(numOfMatches<1){
+        std::cout << "You can't play negative amounts of matches" << std::endl;
+        throw std::out_of_range ("error");
     }
     else {
-        for (int f = 0; f < total; f ++) {
-            Game *testGame = new Game(playQueue->dequeue()->getPlayer(), playQueue->dequeue()->getPlayer());
-            testGame->collectGuesses();
-            testGame->play();
-            delete testGame;
+
+        PlayerQueue *playQueue;
+        if (queueName == "Bronze") {
+            playQueue = playerQueues->getValueAt(5);
         }
-    }
-    if(even==false){
-        playQueue->dequeue();
+        if (queueName == "Silver") {
+            playQueue = playerQueues->getValueAt(4);
+        }
+        if (queueName == "Gold") {
+            playQueue = playerQueues->getValueAt(3);
+        }
+        if (queueName == "Platinum") {
+            playQueue = playerQueues->getValueAt(2);
+        }
+        if (queueName == "Diamond") {
+            playQueue = playerQueues->getValueAt(1);
+        }
+        if (queueName == "Challenger") {
+            playQueue = playerQueues->getValueAt(0);
+        }
+
+
+        int total = playQueue->getCount();
+        bool even;
+
+        if (total % 2 == 0) {
+            even = true;
+            total = total / 2;
+        } else {
+            even = false;
+            total = total / 2;
+        }
+        if (numOfMatches > total) {
+//            std::cout << "Entered Match Amount is greater than that of players in " + queueName + " queue" << std::endl;
+//            std::cout << "Played " + std::to_string(total) + " instead" << std::endl;
+            for (int f = 0; f < total; f++) {
+                Game *testGame = new Game(playQueue->dequeue()->getPlayer(), playQueue->dequeue()->getPlayer());
+                testGame->collectGuesses();
+                testGame->play();
+                delete testGame;
+            }
+        } else {
+            for (int f = 0; f < numOfMatches; f++) {
+                Game *testGame = new Game(playQueue->dequeue()->getPlayer(), playQueue->dequeue()->getPlayer());
+                testGame->collectGuesses();
+                testGame->play();
+                delete testGame;
+            }
+        }
+        if (even == false, playQueue->getCount() == 1) {
+            playQueue->dequeue();
+        }
     }
 }
 
@@ -225,26 +229,38 @@ void MatchMakerRevised::readPlayersFromFile(const std::string &filename) {
 }
 
 void MatchMakerRevised::populatePlayerList(int numOfPlayers) {
-    for(int i = 0; i < numOfPlayers; i++) {
-        playerList->insertAtEnd(new Player("Player" + std::to_string(playerCount)));
-        playerCount++;
+    if(numOfPlayers<1){
+        std::cout << "You can't populate negative amount of players" << std::endl;
+    }
+    else {
+        for (int i = 0; i < numOfPlayers; i++) {
+            playerList->insertAtEnd(new Player("Player" + std::to_string(playerCount)));
+            playerCount++;
+        }
     }
 }
 
 void MatchMakerRevised::runMatches(int numOfMatches) {
     //Runs x matches with each player
 
-    for (int k = 0; k < numOfMatches; k++) {
-        if ((playerList->itemCount() % 2) == 0) {
-            for (int i = 0; i < playerList->itemCount(); i += 2) {
-                Game *testGame = new Game(playerList->getValueAt(i), playerList->getValueAt(i + 1));
+    if(numOfMatches<1){
+        std::cout << "You can't run negative matches" << std::endl;
+        std::out_of_range("error");
+    }
 
-                testGame->generateSolution();
-                testGame->collectGuesses();
+    else if(numOfMatches>0){
 
-                //testGame->generateSolution(); *changed game to rock paper scissors format
-                testGame->play();
-                delete testGame;
+        for (int k = 0; k < numOfMatches; k++) {
+            if ((playerList->itemCount() % 2) == 0) {
+                for (int i = 0; i < playerList->itemCount(); i += 2) {
+                    Game *testGame = new Game(playerList->getValueAt(i), playerList->getValueAt(i + 1));
+
+                    testGame->generateSolution();
+                    testGame->collectGuesses();
+
+                    //testGame->generateSolution(); *changed game to rock paper scissors format
+                    testGame->play();
+                    delete testGame;
 
 
 //          else {
@@ -262,17 +278,18 @@ void MatchMakerRevised::runMatches(int numOfMatches) {
 //                    }
 //                }
 //            }
-            }
-        } else {
-            for (int i = 0; i < playerList->itemCount() - 1; i += 2) {
-                Game *testGame = new Game(playerList->getValueAt(i), playerList->getValueAt(i + 1));
+                }
+            } else {
+                for (int i = 0; i < playerList->itemCount() - 1; i += 2) {
+                    Game *testGame = new Game(playerList->getValueAt(i), playerList->getValueAt(i + 1));
 
-                testGame->generateSolution();
-                testGame->collectGuesses();
+                    testGame->generateSolution();
+                    testGame->collectGuesses();
 
-                //testGame->generateSolution(); *changed game to rock paper scissors format
-                testGame->play();
-                delete testGame;
+                    //testGame->generateSolution(); *changed game to rock paper scissors format
+                    testGame->play();
+                    delete testGame;
+                }
             }
         }
     }
@@ -302,6 +319,7 @@ void MatchMakerRevised::vsMatch(std::string player1, std::string player2) {
     vsGame->generateSolution();
     vsGame->collectGuesses();
     vsGame->play();
+    std::cout << "Winner: " + vsGame->getWinner() << std::endl;
     delete vsGame;
 }
 
@@ -497,6 +515,7 @@ void MatchMakerRevised::balanceList() {
 
     }
 }
+
 
 
 
