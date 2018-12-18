@@ -1,5 +1,5 @@
 //
-// Created by Milo Rue on 11/12/2018.
+// Created by Milo Rue and Saul Amster on 11/12/2018.
 //
 
 #include "Game.h"

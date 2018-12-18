@@ -1,5 +1,5 @@
 //
-// Created by Milo Rue on 12/1/2018.
+// Created by Milo Rue and Desmond Lee on 12/1/2018.
 //
 
 #ifndef PROJECT_MATCHMAKERREVISED_H
